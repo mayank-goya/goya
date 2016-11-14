@@ -1,0 +1,207 @@
+<div class="modal  fade viewModal"  role="dialog"  data-backdrop="static">
+  <div class="modal-dialog model-wd"   style="z-index:9999999">
+      <div class="modal-content new-modal">  
+       <div class="modal-body mbody-wd ">
+<section>
+			
+			<div class="container vv">
+			    <style type="text/css" id="print">
+			    .largeWidth {
+					    width: 20%;
+					    text-align: right;
+					}
+
+					.smallWidth {
+					    width: 10%;
+					    text-align: right;
+					}
+					.visilble-area{
+						height: auto !important;
+					}
+					
+					
+					 
+	
+			    </style>
+
+				<div class="col-xs-12 col-sm-6 col-md-6 overview-div visible-area">
+				<p class="ord-cnl amm" data-dismiss="modal">Close</p>
+				<a class="ord-cnl text-dec amm"  ng-click="setPreview()">Print</a>
+				<p class=""><input type="submit" style="float: right;height: 23px;text-align: center;padding: 1px;margin-top:0px;width: 68px;" class="sub-cust1" ng-if="mobDet.StatusText== 'Open'" value="Submit" ng-click="submitOrder()"/></p>
+				
+					<p ng-if="mobDetails.Pickup == 'false'" class="over-heading">Order Details</p>
+					<p ng-if="mobDetails.Pickup == 'true'" class="over-heading  pic-ord-pop">Pickup Order Details</p>
+					<div class="col-xs-12 col-sm-12 col-md-12 over-lft1 over-nww">
+						<ul class="col-xs-12 col-sm-12 col-md-12 over-ul">
+							<li class="col-xs-6 col-sm-6 col-md-4 over-left">#EOR:</li>
+							<li class="col-xs-6 col-sm-6 col-md-8 over-left1">{{mobDet.PONumber}}</li>
+							<li class="col-xs-6 col-sm-6 col-md-4 over-left">Customer Name:</li>
+							<li class="col-xs-6 col-sm-6 col-md-8 over-left1">{{mobDet.CustomerName}}</li>
+							<li class="col-xs-6 col-sm-6 col-md-4 over-left">Address :</li>
+							<li class="col-xs-6 col-sm-6 col-md-8 over-left1">{{Address}}</li>
+							<li class="col-xs-6 col-sm-6 col-md-4 over-left">Phone No:</li>
+							<li class="col-xs-6 col-sm-6 col-md-8 over-left1">{{PhoneNo}}</li>
+							<li class="col-xs-6 col-sm-6 col-md-4 over-left">Comment:</li>
+							<li class="col-xs-6 col-sm-6 col-md-8 over-left1">{{Comments}}</li>
+							<li class="col-xs-6 col-sm-6 col-md-4 over-left">Order Date:</li>
+							<li class="col-xs-6 col-sm-6 col-md-8 over-left1">{{mobDet.OrderDate}}</li>
+							
+						</ul>
+					</div>
+					<!--over-ul-->
+					<div class="col-xs-12 col-sm-12 col-md-12 over-rgt1 over-nww">
+						<ul class="col-xs-12 col-sm-12 col-md-12 over-ul">
+						<li class="col-xs-6 col-sm-6 col-md-4 over-left">Status:</li>
+							<li class="col-xs-6 col-sm-6 col-md-8 over-left1">{{mobDet.StatusText}}</li>
+							<li class="col-xs-6 col-sm-6 col-md-5 l1-wd over-left">Delivery Date:</li>
+							<li class="col-xs-6 col-sm-6 col-md-7  over-left1">{{DeliveryDate}}</li>
+							<li class="col-xs-6 col-sm-6 col-md-4 over-left">PO#:</li>
+							<li class="col-xs-6 col-sm-6 col-md-8 over-left1">{{mobDet.ClientPONumber || "-"}}</li>
+							<li class="col-xs-6 col-sm-6 col-md-4 over-left">Day/NotDay:</li>
+							<li class="col-xs-6 col-sm-6 col-md-8 over-left1">{{OrderDay}}/{{NotDay}}</li>
+							<li class="col-xs-6 col-sm-6 col-md-4 over-left">Promo Code:</li>
+							<li class="col-xs-6 col-sm-6 col-md-8 over-left1">{{PromoName}}</li>
+							<li class="col-xs-6 col-sm-6 col-md-4 over-left">Amt Collect:</li>
+							<li class="col-xs-6 col-sm-6 col-md-8 over-left1">${{ActualAmount}}</li>		
+							<li class="col-xs-6 col-sm-6 col-md-4 over-left">#BrokerId:</li>
+							<li class="col-xs-6 col-sm-6 col-md-8 over-left1">{{mobDet.SalesmanID}}/{{brokerName}}</li>
+						</ul>
+					</div>
+					<!--over-ul-->
+					
+					<!--over-ul-->
+			
+				<!--overview-div-->
+				
+				<div class="col-xs-12 col-sm-12 col-md-12 clr20 Items-box">
+					<p class="over-heading">Items Details</p>
+					<ul class="col-xs-12 col-sm-12 col-md-12 item-dtl-bx">
+					<li class="col-xs-3 col-sm-3 col-md-1" ng-class="{'li-wd':mobDetails.Pickup == 'true'}">Dept</li>
+						<li class="col-xs-3 col-sm-3 col-md-1" ng-class="{'li-wd':mobDetails.Pickup == 'true'}">Item#</li>
+						<li class="col-xs-3 col-sm-3 col-md-7" style="text-align:left;" ng-class="{'li-wd':mobDetails.Pickup == 'true'}">Name</li>
+						<li class="col-xs-2 col-sm-2 col-md-1" ng-class="{'li-wd':mobDetails.Pickup == 'true'}">Cases</li>
+						
+						<li class="col-xs-2 col-sm-2 col-md-1"  ng-show="mobDetails.Pickup == 'true'" ng-class="{'li-wd':mobDetails.Pickup == 'true'}">Units</li>
+						<li class="col-xs-2 col-sm-2 col-md-1" ng-class="{'li-wd':mobDetails.Pickup == 'true'}">Cases Price</li>
+					</ul>
+					<!--item-dtl-bx-->
+					<div class="col-xs-12 col-sm-12 col-md-12">
+					<ul class="col-xs-12 col-sm-12 col-md-12 item-dtlnew" ng-repeat="order in OrderPreview ">
+						<li  class="col-xs-3 col-sm-3 col-md-1" ng-class="{'li-wd':mobDetails.Pickup == 'true'}">{{order.dept}}</li>
+						<li class="col-xs-3 col-sm-3 col-md-1" ng-class="{'li-wd':mobDetails.Pickup == 'true'}">
+						{{order.ProductCode}}</li>
+						<li  class="col-xs-3 col-sm-3 col-md-7" style="text-align:left;" ng-class="{'li-wd':mobDetails.Pickup == 'true'}">{{order.DisplayName}}</li>
+						<li  class="col-xs-3 col-sm-3 col-md-1" ng-class="{'li-wd':mobDetails.Pickup == 'true'}">{{order.Quantity}}</li>
+						
+						
+						<li  class="col-xs-2 col-sm-1 col-md-2" ng-show="mobDetails.Pickup == 'true'"  ng-class="{'li-wd':mobDetails.Pickup == 'true'}">
+						{{order.OrdUnits}}</li>
+					<li  class="col-xs-2 col-sm-2 col-md-1" ng-class="{'li-wd':mobDetails.Pickup == 'true'}">{{order.CasePrice}}</li>
+					</ul>
+					</div>
+					<!--item-dtl-bx-->
+					<ul class="col-xs-12 col-sm-12 col-md-12 item-dtl-bx">
+						<li   class="col-xs-3 col-sm-3 col-md-1"></li>
+
+						<li   class="col-xs-3 col-sm-3 col-md-1"></li>
+
+						<li   class="col-xs-3 col-sm-3 col-md-7" style="text-align:right;">Total</li>
+
+						<li   class="col-xs-3 col-sm-3 col-md-1">{{TotalOrderQty}}</li>			
+
+						<li   ng-class="{'li-wd':mobDetails.Pickup == 'true','li-wd1':mobDetails.Pickup == 'false'}"  
+						  class="col-xs-3 col-sm-3 col-md-1">{{TotalUnitsQty}}</li>
+
+
+						  <li   class="col-xs-2 col-sm-2 col-md-1">{{totalCasePrice | number : 2}}</li>
+					</ul>
+					<!--item-dtl-bx-->
+				</div>
+				<!--Items-box-->
+			</div>	
+			</div>
+		<!--	<div class="container" ng-if="mobDetails.Pickup == 'true'">
+				<div class="col-xs-12 col-sm-6 col-md-6 overview-div">
+				<p class="ord-cnl" data-dismiss="modal">Close</p>
+				<p class="ord-cnl">Print</p>
+					<p class="over-heading pic-ord-pop" >Pickup Order Details</p>
+					<div class="col-xs-12 col-sm-12 col-md-12 over-lft1">
+						<ul class="col-xs-12 col-sm-12 col-md-12 over-ul">
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">#EOR</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">{{mobDet.PONumber}}</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Customer Name</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">{{mobDet.CustomerName}}</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Address </li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">-</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Phone No.</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">-</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Comment</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">-</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Order Date</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">{{mobDet.OrderDate}}</li>
+							
+						</ul>
+					</div>
+					 
+					<div class="col-xs-12 col-sm-12 col-md-12 over-rgt1">
+						<ul class="col-xs-12 col-sm-12 col-md-12 over-ul">
+						<li class="col-xs-6 col-sm-6 col-md-6 over-left">Status</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">{{mobDet.StatusText}}</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Delivery Date</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">-</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">PO#</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">{{mobDet.ClientPONumber || "-"}}</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Day/NotDay</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">-</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Promo Code</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">-</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Amount Collected</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">-</li>					
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">#BrokerId</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">{{mobDet.SalesmanID}}</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Broker Name</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">{{brokerName}}</li>
+						</ul>
+					</div>
+					 
+				 
+			
+			 
+				
+				<div class="col-xs-12 col-sm-12 col-md-12 clr20 Items-box">
+					<p class="over-heading">Items Details</p>
+					<ul class="col-xs-12 col-sm-12 col-md-12 item-dtl-bx">
+						<li class="col-xs-2 col-sm-2 col-md-2">Cases1</li>
+						<li class="col-xs-2 col-sm-2 col-md-2">Dept</li>
+						<li class="col-xs-3 col-sm-3 col-md-3">Item Code</li>
+						<li class="col-xs-3 col-sm-3 col-md-3">Name</li>
+					</ul>
+					 
+					<ul class="col-xs-12 col-sm-12 col-md-12 item-dtlnew">
+						<li class="col-xs-2 col-sm-2 col-md-2">{{mobPickDet.CompanyID}}</li>
+						<li class="col-xs-2 col-sm-2 col-md-2">{{mobPickDet.OrdUnits}}</li>
+						<li class="col-xs-2 col-sm-2 col-md-2">Alex Moon</li>
+						<li class="col-xs-3 col-sm-3 col-md-3">Alex Moon</li>
+						<li class="col-xs-2 col-sm-2 col-md-2">Alex Moon</li>
+					</ul>
+					 
+					<ul class="col-xs-12 col-sm-12 col-md-12 item-dtl-bx">
+						<li class="col-xs-2 col-sm-2 col-md-2">{{mobPickDet.CompanyID}}</li>
+						<li class="col-xs-2 col-sm-2 col-md-2">{{mobPickDet.OrdUnits}}</li>
+						<li class="col-xs-2 col-sm-2 col-md-2">22</li>
+						<li class="col-xs-3 col-sm-3 col-md-3">44</li>
+						<li class="col-xs-2 col-sm-2 col-md-2">44</li>
+					</ul>
+					 
+				</div>
+				 
+			</div>	
+			</div> -->
+			<!--container-->
+		</section>
+		<section>
+			<!-- mobile view start -->
+</div>
+</div>
+ </div>
+   </div>

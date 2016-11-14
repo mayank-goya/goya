@@ -1,0 +1,87 @@
+ 
+ <div class="container font-stock">
+ <div class="  stocktabfrom stocktab topstock1 " >
+
+  <div style="clear:both;margin:0 auto;height:0px;"></div>
+
+      <form class="form-inline" ng-submit="vm.addSalesCommunicatorData(vm.communicatorData)">
+<div class="row" style="margin-top: -20px;">
+<div  style="height:45px; text-align:center;">
+<b style="font-size:17px;background: rgb(246, 234, 234);padding: 6px;">Out Of Stock</b>
+</div>
+</div>
+<div class="row"><div style="color:red;text-align:center"><span style="color:red" ng-if="vm.invalDate">Invalid Date</span></div></div>
+<div class="row" >
+	<div class="col-xs-4 col-lg-4 nwwwmb">
+
+          <label class="orderleft1 " for="exampleInputName2">From Date</label>
+          <div class="datetimepicker1 newpikr">
+              <input datefrom-picker ng-model="vm.outOfStock.showToDate" type="text" class="datepicker1  form-control newimp1"  required/>
+              
+          </div>
+            </div>
+
+
+
+
+            <div class="col-xs-4 col-lg-4 col-sm-4 col-md-4 nwwwmb">
+           
+                <label class="orderleft1" for="exampleInputName2">To Date</label>
+                <div class="datetimepicker1 newpikr">
+                    <input datestockpicker ng-model="vm.outOfStock.showFromDate" type="text"  class=" form-control datepickerStock newimp1" required/>
+                    
+                </div>
+            </div>
+
+  <div class="col-xs-4 col-lg-4 ">
+
+          <label class="orderleft1" for="exampleInputName2">.</label>
+          <div class="datetimepicker1 newpikr">
+                 <button class="btn" style="background-color:#f3bd24" ng-click="vm.checkDate()">Submit</button>
+              
+          </div>
+            </div>
+
+
+</div>
+  
+                    
+        
+
+
+
+      
+     
+    </form>
+ </div>
+
+
+<table>
+</table>
+
+</table>
+
+
+
+
+
+
+
+    <div class="row top-bar-stock">
+        <div class="col-xs-4 col-centered outStock"><span class="font-light">Item Code.</span></div>
+        <div class="col-xs-4 col-centered outStock"><span class="font-light">Item Name</span></div>
+        <div class="col-xs-4 col-centered outStock"><span class="font-light">Count</span></div>
+        
+    </div>
+<div class="topstock">
+<div class="row row-centered" ng-repeat="noStockData in vm.noStockData" style="width:100%;margin-left: 0px;">
+        <div class="col-xs-4 col-centered view-outstock"><span class="font-light">{{noStockData.ItemCode}}</span></div>
+        <div class="col-xs-4 col-centered view-outstock"><span class="font-light">{{noStockData.ItemName}}</span></div>
+        <div class="col-xs-4 col-centered view-outstock"><span class="font-light">{{noStockData.ItemCount}}</span></div>
+        
+    </div>
+    </div>
+    
+</div>
+
+ <ng-include src="headerUrl"></ng-include>

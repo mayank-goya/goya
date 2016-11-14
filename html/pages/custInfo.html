@@ -1,0 +1,185 @@
+<section>
+			<div class="container" ng-if="vm.cust_data.Pickup == 'false'">
+				<div class="col-xs-12 col-sm-12 col-md-12 overview-div ovr-top">
+					<p class="over-heading dtl-bar1">Order Details1111</p>
+					<div class="col-xs-12 col-sm-4 col-md-4 ">
+						<ul class="col-xs-12 col-sm-12 col-md-12 ">
+							<ul class="col-xs-12 col-sm-12 col-md-12 over-ul">
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">#EOR444</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">{{vm.custData.PONumber}}</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Customer </li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">{{vm.custData.CustomerName}}</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Address </li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right"></li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Phone No.</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right"></li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Comment</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right"></li>
+							
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Order Date</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">{{vm.custData.OrderDate}}</li>
+							
+							
+						</ul>
+						</ul>
+					</div>
+					<!--over-ul-->
+					<div class="col-xs-12 col-sm-4 col-md-4 ">
+						<ul class="col-xs-12 col-sm-12 col-md-12 over-ul">
+						<li class="col-xs-6 col-sm-6 col-md-6 over-left">Cases</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">{{vm.custData.CompanyID}}</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Pickup</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">{{pickup}}</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Status</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">{{vm.custData.StatusText}}</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">#BrokerId</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">{{vm.custData.SalesmanID}}</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Broker Name</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">{{vm.brokerName}}</li>
+							<!-- <li class="col-xs-6 col-sm-6 col-md-6 over-left">Customer </li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">Alex Moon</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Cases</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">Alex Moon</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Pickup</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">Alex Moon</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Status</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">Alex Moon</li> -->
+						</ul>
+					</div>
+					<!--over-ul-->
+					<div class="col-xs-12 col-sm-4 col-md-4 ">
+						<ul class="col-xs-12 col-sm-12 col-md-12 over-ul">
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">#EOR333</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">Alex Moon</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Order Date</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">Alex Moon111</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Customer </li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">Alex Moon</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Cases</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">Alex Moon</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Pickup</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">Alex Moon</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Status</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">Alex Moon</li>
+						</ul>
+					</div>
+					<!--over-ul-->
+				</div>
+				<!--overview-div-->
+				<style>
+				</style>
+				<div class="col-xs-12 col-sm-12 col-md-12 clr20 Items-box">
+					<p class="over-heading">Items Details</p>
+					<ul class="col-xs-12 col-sm-12 col-md-12 item-dtl-bx">
+						<li class="col-xs-3 col-sm-3 col-md-3">Cases</li>
+						<li class="col-xs-3 col-sm-3 col-md-3">Department</li>
+						<li class="col-xs-3 col-sm-3 col-md-3">Product Code</li>
+						<li class="col-xs-3 col-sm-3 col-md-3">Product Name</li>
+					</ul>
+					<!--item-dtl-bx-->
+					<ul class="col-xs-12 col-sm-12 col-md-12 item-dtlnew">
+						<li class="col-xs-3 col-sm-3 col-md-3">{{vm.custData.CompanyID}}</li>
+						<li class="col-xs-3 col-sm-3 col-md-3">Alex Moon</li>
+						<li class="col-xs-3 col-sm-3 col-md-3">Alex Moon</li>
+						<li class="col-xs-3 col-sm-3 col-md-3">Alex Moon</li>
+					</ul>
+					<!--item-dtl-bx-->
+					<ul class="col-xs-12 col-sm-12 col-md-12 item-dtl-bx">
+						<li class="col-xs-3 col-sm-3 col-md-3">Total</li>
+						<li class="col-xs-3 col-sm-3 col-md-3">3431111</li>
+						<li class="col-xs-3 col-sm-3 col-md-3">22</li>
+						<li class="col-xs-3 col-sm-3 col-md-3">44</li>
+					</ul>
+					<!--item-dtl-bx-->
+				</div>
+				<!--Items-box-->
+			</div>
+			<div class="container" ng-if="vm.cust_data.Pickup == 'true'">
+				<div class="col-xs-12 col-sm-12 col-md-12 overview-div ovr-top">
+					<p class="over-heading pick-bar">Pickup Order Details</p>
+					<div class="col-xs-12 col-sm-4 col-md-4 ">
+						<ul class="col-xs-12 col-sm-12 col-md-12 over-lft1">
+							<ul class="col-xs-12 col-sm-12 col-md-12 over-ul">
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">#EOR222</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">{{vm.custPickData.PONumber}}</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Order Date</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">{{vm.custPickData.OrderDate}}</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Customer </li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">{{vm.custPickData.CustomerName}}</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Cases</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">{{vm.custPickData.CompanyID}}</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Pickup</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">{{pickup}}</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Status</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">{{vm.custPickData.StatusText}}</li>
+						</ul>
+						</ul>
+					</div>
+					<!--over-ul-->
+					<div class="col-xs-12 col-sm-4 col-md-4 ">
+						<ul class="col-xs-12 col-sm-12 col-md-12 over-ul">
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">#BrokerId</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">{{vm.custPickData.SalesmanID}}</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Broker Name</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">{{vm.brokerName}}</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Customer </li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">Alex Moon111</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Cases</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">Alex Moon</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Pickup</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">Alex Moon</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Status</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">Alex Moon</li>
+						</ul>
+					</div>
+					<!--over-ul-->
+					<div class="col-xs-12 col-sm-4 col-md-4 ">
+						<ul class="col-xs-12 col-sm-12 col-md-12 over-ul">
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">#EOR111</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">Alex Moon</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Order Date</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">Alex Moon</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Customer </li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">Alex Moon</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Cases</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">Alex Moon</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Pickup</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">Alex Moon</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-left">Status</li>
+							<li class="col-xs-6 col-sm-6 col-md-6 over-right">Alex Moon</li>
+						</ul>
+					</div>
+					<!--over-ul-->
+				</div>
+				<!--overview-div-->
+				<style>
+				</style>
+				<div class="col-xs-12 col-sm-12 col-md-12 clr20 Items-box">
+					<p class="over-heading">Items Details</p>
+					<ul class="col-xs-12 col-sm-12 col-md-12 item-dtl-bx">
+						<li class="col-xs-2 col-sm-2 col-md-2">Cases</li>
+						<li class="col-xs-2 col-sm-2 col-md-2">Unit</li>
+						<li class="col-xs-2 col-sm-2 col-md-2">Department</li>
+						<li class="col-xs-3 col-sm-3 col-md-3">Product Code</li>
+						<li class="col-xs-3 col-sm-3 col-md-3">Product Name</li>
+					</ul>
+					<!--item-dtl-bx-->
+					<ul class="col-xs-12 col-sm-12 col-md-12 item-dtlnew">
+						<li class="col-xs-3 col-sm-3 col-md-3">{{vm.custPickData.CompanyID}}</li>
+						<li class="col-xs-3 col-sm-3 col-md-3">{{vm.custPickData.OrdUnits}}</li>
+						<li class="col-xs-3 col-sm-3 col-md-3">Alex Moon</li>
+						<li class="col-xs-3 col-sm-3 col-md-3">Alex Moon</li>
+					</ul>
+					<!--item-dtl-bx-->
+					<ul class="col-xs-12 col-sm-12 col-md-12 item-dtl-bx">
+						<li class="col-xs-3 col-sm-3 col-md-3">Total</li>
+						<li class="col-xs-3 col-sm-3 col-md-3">3431222</li>
+						<li class="col-xs-3 col-sm-3 col-md-3">22</li>
+						<li class="col-xs-3 col-sm-3 col-md-3">44</li>
+					</ul>
+					<!--item-dtl-bx-->
+				</div>
+				<!--Items-box-->
+			</div>
+			<!--container-->
+		</section>

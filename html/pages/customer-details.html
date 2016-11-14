@@ -1,0 +1,265 @@
+<div hide-toggle>
+<error-modal errormsz="vm.errorMsg"></error-modal>
+<section>
+      <!-- breadcrumbs-links start --> 
+      <div class="col-md-12 breadcrumbs-links">
+        <div class="container">
+          <ol class="breadcrumb br-quk    bd-color">
+            <a ui-sref="home" class="color2">Home</a>>
+            <a ui-sref="customerdetails" class="color2"> Customers</a>
+          </ol>
+        </div>
+        <!-- container -->
+      </div>
+      <!-- breadcrumbs-links end -->
+    </section>
+    <section>
+      <div class="col-md-12 customer-details-bar clear-site-1">
+        <!-- Customer-details-bar end -->
+        <div class="container">
+          <div class="col-md-6 details-heading clear-site-1">
+            <p>Customers</p>
+          </div>
+          <!-- details-heading end -->
+          <div class="col-md-6 details-submit clear-site-1" id="tabBtnHide">
+           <button type="button" title="Select default customer" class="btn btn-primary submit" ng-click="vm.goTomHome()">Select</button>
+            <button ng-click="vm.goTomHome('c')" title="Redirect to Home Page" class="btn btn-primary cancel">Cancel</button>
+          </div>
+          <!-- details-heading end -->
+        </div>
+        <!-- container end --> 
+      </div>
+      <!-- Customer-details-bar end --> 
+
+  <div class="container">
+<div class="col-md-12 search-bx1" >
+<div class="bk-fixed">
+
+
+<!--<input type="text" class="form-control search-cust ng-pristine ng-untouched ng-valid" ng-model="datalists" placeholder="Search Customer">-->
+
+<!-- <img src="images/search-cust-icon.png" class="search-cust-icon">
+<img src="images/cust-close-icon.png" class="close-cust-icon"> -->
+</div>
+
+</div>
+</div>
+
+      <div class="container" id="quick-full-tab">
+
+
+
+        <div class="col-md-12 customer-details-record cust-detl clear-site-1">
+ 
+<style>
+
+</style>
+
+
+<div class="main-search">
+        <input type="text"  class="form-control mob-hdnw  search-cust ng-pristine ng-untouched ng-valid" ng-model="datalists"  id="exampleInputEmail1" placeholder="Search Customer">
+       
+
+<div class="search-cust1"><span class="statuslab"><b>Status</b></span>
+<span class="statusinp"><select class="form-control" name="status" ng-model="vm.cust_status" ng-options="stat.status for stat in vm.cust_stat" ng-change="vm.filterStatus(vm.cust_status)"></select></span>
+
+</div>
+
+       </div>
+
+     <div class="dekp-head">
+<div  class="mob-det-fxd">
+
+<ul>
+<li class="col-md-1"></li>
+<li   class="col-md-3">Customer ID</li>
+  <li class="col-md-2">Customer Name</li>
+   <li class="col-md-2">Status</li>
+    <li class="col-md-2">Credit Status</li>   
+      <li class="col-md-2">Warehouse</li>
+<ul>
+
+</div>
+</div>
+         <!-- customer-details-record start -->
+          <table class="table " class="fixed_headers">
+          <!--  <thead>
+              <tr  style="position: fixed; background-color: grey;" >
+                <th></th>
+                <th>Customer ID</th>
+                <th>Customer Name</th>
+                <th>Billing Company</th>
+                <th>Warehouse</th>
+              </tr>
+            </thead>-->
+             <tr ng-if="!(vm.filterData|filter:datalists).length"><td class="nodata-info1">No Customer Found</td></tr>
+            <tbody paginationclass ng-repeat="datalists in vm.filterData | filter: datalists">
+              
+              <tr ng-click="vm.showDetail(datalists.USERID,datalists.NAME,datalists.COMPANYID,$index)">
+                <td><input type="radio" name="1" ng-checked="(vm.userDeatilData[0].UserID == datalists.USERID)" ng-click="vm.showDetail(datalists.USERID,datalists.NAME,datalists.COMPANYID,$index)"></td>
+                <td class="custid-col font-size4">{{ datalists.USERID }}</td>
+                <td  class="col-md-2" class="col-md-3">{{ datalists.NAME }}</td>              
+                <td class="col-md-2">{{ datalists.STATUS }}</td>
+                  <td class="col-md-2">{{ datalists.COMPANYNAME }}</td>
+                <td class="col-md-2">{{ datalists.WHNAME }}</td>
+              </tr>
+             
+
+           <tr><td colspan="6" class="cust-sp"  ng-if="vm.userDeatilData[0].UserID == datalists.UserID && vm.userDeatilData.length">
+              <table class="table tab-space" >
+             <thead>
+              <tr >
+                <th class="padding-view">Street</th>
+                <th class="padding-view">City</th>
+                <th class="padding-view">State</th>
+                <th class="padding-view">Zip</th>
+                <th class="padding-view">Phone</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr >
+                <td class="td-tab-space">{{vm.userDeatilData[0].Street}}</td>
+                <td class="td-tab-space">{{vm.userDeatilData[0].City}}</td>
+                <td class="td-tab-space">{{vm.userDeatilData[0].State}}</td>
+                <td class="td-tab-space">{{vm.userDeatilData[0].Zip}}</td>
+                <td class="td-tab-space">{{vm.userDeatilData[0].ContactNo}}</td>
+              </tr>
+              </tbody>
+          </table></td></tr>
+
+          </tbody>
+          </table>
+          
+            <!-- pagination-dtl end -->
+           <!--  <nav>
+           <div class="pagination-dtl">
+                  <ul class="pagination pagination-sm paginationlist">
+                    <li class="page-item" ng-class="vm.DisablePrevPage()">
+                      <a href ng-click="vm.prevPage()" style="color: #323232!important;"> Prev</a>
+                    </li>
+                     <li ng-repeat="n in vm.range()" ng-class="{active: n == currentPage}" ng-click="vm.setPage(n)">
+                      <a href="#" style="color: #7f7f7f!important;">{{n+1}}</a>
+                    </li>
+                    <li ng-class="vm.DisableNextPage()">
+                      <a href ng-click="vm.nextPage()" style="color: #323232!important;">Next </a>
+                       
+                    </li>
+                  </ul>           
+          </div>
+          </nav> -->
+          <!-- pagination-dtl end -->
+        </div>
+        <!-- customer-details end -->
+      </div>
+      <!-- container end -->
+    </section>
+    <section>
+      <!-- mobile view start -->
+  <div class="col-md-12 details-bar clear-site-1">
+  
+  <span class="cust-span1" >Customers</span>
+  <button class="cust-span2 btn  select-btn1" title="Redirect to Home Page" ng-click="vm.goTomHome('c')">Cancel</button>
+    <span class="cust-span2"><button class="btn  select-btn1 " title="Select default customer" ng-click="vm.goTomHome()">Select</button></span>
+
+     </div>
+
+   <style>
+   .cust-span1{
+   float:left;
+   }
+     .cust-span2{
+   float:right;
+   }
+   .select-btn1{
+    /* background-color: #003E89; */
+    width: 68px;
+    height: 25px;
+    padding-top: 0px;
+    font-size: 10px;
+    float: right;
+    margin-top: 0px;
+    margin-right: 24px;
+    padding-top: 5px;
+    /* border: 1px solid #FFFEFE; */
+    background-color: #f3bd24;
+    border-color: #f3bd24;
+      color: #003E89;
+   }
+     .select-btn1:hover{
+     color:#fff;
+      box-shadow: none;
+      -moz-box-shadow: none;
+      -webkit-box-shadow: none;
+}    
+
+.btn:hover, .btn:focus {
+  color: #FFF;
+  text-decoration: none;
+}
+   </style>
+   
+      <div class="container mob-clear1">
+
+   
+        <div class="col-xs-12 col-sm-12 col-md-12 mobile-table-record mob-top" id="quick-full-tab">
+       <div class="main-search">
+        <input type="text" class="form-control search-cust" ng-model="datalistsM" placeholder="Search Customer">
+
+
+<div class="search-cust1">
+
+<span class="statuslab"><b>Status</b></span>
+<span class="statusinp"><select class="form-control" name="status" ng-model="vm.cust_status" ng-options="stat.status for stat in vm.cust_stat"></select></span>
+
+</div>
+         <!-- <img src="images/search-cust-icon.png" class="search-cust-icon ">
+         <img src="images/cust-close-icon.png" class="close-cust-icon"> -->
+       </div>
+       <div class="nodata-info1" ng-if="!(vm.filterData|filter:datalistsM).length">No Customer Found</div>
+          <div  ng-click="vm.checkRedioBtn(datalistsM.USERID,datalistsM.NAME,datalistsM.COMPANYID,vm.datalistsM.checked,$index)" class="col-xs-12 col-sm-12  col-md-12 col-record  clear-site-1" ng-repeat="datalistsM in vm.filterData | filter: datalistsM">
+            <div class="col-xs-5 col-sm-5 col-md-5 mobile-table-left clear-site-1">
+              <p>{{ datalistsM.NAME }}</p>
+              <span>{{ datalistsM.COMPANYNAME }}<b>({{ datalistsM.WHNAME }})</b></span>
+            </div>
+            <!-- mobile-table-left -->
+            <div class="col-xs-7 col-sm-7 col-md-7 mobile-table-right clear-site-1">
+              <p class="col-xs-4 col-sm-6 col-md-6">(#{{ datalistsM.USERID }})</p>
+            <span class="col-xs-8 col-sm-6 col-md-6 " ng-class="{'checkCls':datalistsM.USERID == vm.userDeatilData1[0].UserID  && vm.userDeatilData1.length  ,'custom-radio' : datalistsM.checked == false}" ng-click="vm.checkRedioBtn(datalistsM.USERID,datalistsM.NAME,datalistsM.COMPANYID,vm.datalistsM.checked,$index)">
+              <input type="radio" name="name" ng-model="vm.datalistsM.checked" />    
+                 <!--  <img src="{{vm.image}}" style="cursor:pointer">  -->
+                
+              </span>
+            </div>
+            <!-- mobile-table-left -->
+            <div ng-if="vm.userDeatilData1[0].UserID == datalistsM.USERID && vm.userDeatilData1.length" class="col-xs-12 col-sm-12 col-md-12 col-record clear-site-1 bg-color" >
+          <div class="col-xs-12 col-sm-12 col-md-12 mobile-table-left clear-site-1">
+          <span style="margin-left:15px;">{{vm.userDeatilData1[0].Street}} {{vm.userDeatilData1[0].City}} {{vm.userDeatilData1[0].State}}</span>
+          
+         
+          </div>
+<!-- mobile-table-left -->
+          <div class="col-xs-3 col-sm-3 col-md-3 mobile-table-right mob-align clear-site-1">
+          <b>{{vm.userDeatilData1[0].Zip}}</b>
+            </div>
+
+                      <div class="col-xs-4 col-sm-4 col-md-4 mobile-table-right mob-align clear-site-1">
+          <b>Ph. <a ng-href="tel: {{vm.userDeatilData1[0].ContactNo}}">{{vm.userDeatilData1[0].ContactNo}}</a></b> 
+            </div>
+
+
+            <!-- mobile-table-left -->
+          </div>
+          </div>
+          
+          <!-- col-record -->
+
+          <div class="mob-fxclear"></div>
+        </div>
+        <!-- mobile-table-record -->
+      </div>
+      <!-- container -->
+    </section>
+    <homescreen custid="vm.custId" custname='vm.custName'></homescreen>
+</div>
+
+  <ng-include src="headerUrl"></ng-include>

@@ -1,0 +1,25 @@
+<div class="modal fade homeScreen" role="dialog"  data-backdrop="static">
+  <div class="modal-dialog" style="z-index:9999999">
+      <div class="modal-content">
+
+          <div class="modal-header">  
+              <h2></h1>
+          </div>
+
+          <div class="modal-body ftr-align">
+              <h4 ng-if="custid!=''"><b>{{custid}}-{{custname}}</b></h4>
+              <h4 ng-if="custid==''">No Customer Selected</h4>
+          </div>
+
+          <div class="modal-footer ftr-align">
+              
+              <button class="orangeBtn add-crt-btn1" ng-if="custid==''" ng-click="goToHome()" >Home</button>
+              <button class="orangeBtn add-crt-btn1"  ng-if="custid!=''" ng-click="goToHome()" >Proceed</button>
+              <button class="orangeBtn add-crt-btn1" data-dismiss="modal" >Cancel</button>
+          </div>
+
+
+      </div>
+  </div>
+</div>
+

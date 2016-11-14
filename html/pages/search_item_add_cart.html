@@ -1,0 +1,449 @@
+<div hide-toggle>
+<section>
+        <!-- breadcrumbs-links start --> 
+        <div class="col-md-12 breadcrumbs-links">
+          <div class="container">
+            <ol class="breadcrumb br-quk    bd-color">
+              <a ui-sref="home" class="color2">Home</a>&gt;
+              <a ui-sref="searchitem" class="color2"> Search Items</a>
+            </ol>
+          </div>
+          <!-- container -->
+        </div>
+        <!-- breadcrumbs-links end -->
+      </section>
+      
+      <div menu-toggle class="mobile-tab-bar">
+      <div class="container">
+        <!--search-order-form start -->
+        <div class="col-md-12 search-order-form clear-site-1">
+          <div class="col-xs-6 col-sm-6 col-md-6 form-heading">
+            <div class="col-sm-12">
+              <h2>Search Items</h2>
+            </div>
+          </div>
+          <!--form-heading -->
+          <div class="col-xs-6 col-sm-6 col-md-6 order-form-tab mob-new cart-tog">
+            <div class="order-tab1">
+              <!--tab1-->
+              <nav class='navbar  navbar-fixed-top'>
+                <button type='button' class='navbar-toggle' ng-click="handleClick2()" id="menu-toggle2">
+                <span class='sr-only'>Toggle navigation</span>
+                <img src="images/icon1.png">
+                </button>
+                <div id="wrapper2" class="wrapper2">
+                  <div id="sidebar-wrapper2">
+                    <div id="sidebar-wrapper2">
+                
+                      <div class="close-tab">
+                        <button type='button' class='navbar-toggle' ng-click="handleClick2()">
+                        <span class='sr-only'>Toggle navigation</span>
+                        <img src="images/tab-close.png">
+                        </button>
+                      </div>
+                      <!--close-tab-->
+                      <div id="wrapper2-top">
+                        <img src="images/sort-icon.jpg">&nbsp; Filter
+                      </div>
+                      <!--wrapper1-top-->
+                      <div id="wrapper2-top-form">
+                        <form>
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Order Date</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputPassword1">Customer Name</label>
+                            <input type="email" class="form-control date-icon" id="exampleInputEmail1" placeholder="Email">
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputPassword1">Delivery Date</label>
+                            <select class="form-control">
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                            </select>
+                          </div>
+                          <button type="submit" class="btn btn-default btn-search ">SORT</button>
+                        </form>
+                      </div>
+                      <!--wrapper1-top-form-->
+                    </div>
+                    <div id="page-content-wrapper2">
+                    </div>
+                  </div>
+                  <div class="orig_logo">
+                    <a class='navbar-brand text-hide' id="orig_logo"  href='/' onClick={Link.newhandleClick}>SmartMoney</a>
+                  </div>
+              </nav>
+              </div><!--tab1-->
+              <div class="order-tab2">
+                <!--tab1-->
+                <nav class='navbar  navbar-fixed-top' >
+                  <button type='button' class='navbar-toggle' ng-click="handleClick1()" id="menu-toggle1">
+                  <span class='sr-only'>Toggle navigation</span>
+                  <img src="images/icon2.png">
+                  </button>
+                  <div id="wrapper1" class="wrapper1">
+                    <div id="sidebar-wrapper1">
+               
+                      <div class="close-tab">
+                        <button type='button' class='navbar-toggle' ng-click="handleClick1()">
+                        <span class='sr-only'>Toggle navigation</span>
+                        <img src="images/tab-close.png">
+                        </button>
+                      </div>
+                      <!--close-tab-->
+                      <div id="wrapper1-top">
+                        <img src="images/icon2.png">&nbsp; Filter
+                      </div>
+                      <!--wrapper1-top-->
+                      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ --> 
+                      <div id="wrapper1-top-form" class="new_mob_div">
+                      <!--  <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12">
+                          <button type="button" class="btn btn-primary freen">Freetext Search</button>
+                          <br/> 
+                          <form class="form-search" method="get" id="s" action="/">
+                            <div class="input-append">
+                              <input type="text" class="input-medium search-query search_butt1" name="s" placeholder="Search Items" value="" >
+                              <br/>
+                            </div>
+                          </form>
+                          <button type="button" class="btn btn-primary freen">Tree Search</button>
+                          <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 bgg">
+                            <ul class="nav nav-sidebar">
+                              <li class="active"><a href="#">Goya Foods, Inc <span class="sr-only">(current)</span></a></li>
+                              <li><a href="#"> > Jersey City(1697)</a></li>
+                              <li><a href="#"> > Beans(205)</a></li>
+                              <li><a href="#"> > Rice(42)</a></li>
+                            </ul>
+                            <ul class="nav nav-sidebar">
+                              <li><a href=""> > Rice Mixes(41)</a></li>
+                              <li><a href=""> > Sazon(27)</a></li>
+                              <li><a href=""> > Condiments(229)</a></li>
+                              <li><a href=""> > Beverages(150)</a></li>
+                              <li><a href=""> > Pantry(165)</a></li>
+                            </ul>
+                            <ul class="nav nav-sidebar">
+                              <li><a href=""> > FROZEN(202)</a></li>
+                              <li><a href=""> > Miscellaneous(10)</a></li>
+                              <br/>
+                            </ul>
+                          </div>
+                          <button type="button" class="btn btn-primary freen">Tree Search</button>
+                        
+                          <select id="year">
+                            <option value="hide">Select Quick Search</option>
+                            <option value="Beans">Beans</option>
+                            <option value="2011">Olive Oil</option>
+                          </select>
+                         
+                          <button type="submit" class="add-on search_butt"> SEARCH </button> 
+                        </div>
+                      </div>
+                     
+                    </div> -->
+                    <div id="page-content-wrapper1">
+                    </div>
+                  </div>
+                  <div class="orig_logo">
+                    <a class='navbar-brand text-hide' id="orig_logo"  href='/' onClick={Link.newhandleClick}>SmartMoney</a>
+                  </div>
+                </nav>
+              </div>
+              <!--form-tab -->
+            </div>
+            <!--search-order-form end -->
+          </div>
+        </div>
+      </div>
+      <!--tab1-->
+      <script type="text/javascript">
+        function handleClick1() {
+         $("#wrapper1").toggleClass("toggled");
+        }
+      </script>
+      <!--container -->
+    </section>
+
+<div class="main-search1 main-seah1">
+        <input type="text" class="form-control search-cust ng-pristine ng-valid ng-touched" ng-model="searchList" placeholder="Search Items">
+         <!-- <img src="images/search-cust-icon.png" class="search-cust-icon ">
+         <img src="images/cust-close-icon.png" class="close-cust-icon"> -->
+       </div>
+  
+  <style type="text/css">
+.main-seah1{
+    width: 100%;
+  position: fixed;
+  z-index: 910;
+  top: 47px;
+}
+@media only screen and (min-width:230px) and (max-width:992px){
+.cart-top2{
+   margin-top: 30px; 
+}
+}
+  </style>
+
+    <div class="col-lg-12 col-sm-12 col-xs-12 quck-details-bar clear-site-1 mobile_k space-div card-fixed1" >
+      <!-- quck-details-bar end -->
+      <div id="pick_up_order " class="container" >
+        <div class="col-lg-5 col-sm-4 col-xs-12 width_se" >
+          <p>Search Items
+             
+              <input type="text" ng-model="searchList" class="form-control input-medium search-query searchItem_Box" name="s" placeholder="Search Items" value="" >          
+          
+        
+           </p>
+          
+             
+          
+        </div>
+        <!-- details-heading end -->
+        <div class="col-lg-3 col-sm-3 col-xs-4 gr-gro" >
+          <div class="dropdown pull-right left_m">
+              <select class="form-control account-field dpt-ItemDept" ng-model="vm.SelectedDepartment" 
+                                placeholder="Select Department" >
+                              <option ng-repeat="Department in vm.Departments" 
+                              value="{{Department.DepartmentCode}}" 
+                                ng-selected="vm.selectedDepartmentValue==Department.DepartmentCode">
+                                   {{Department.DepartmentCode}}
+                              </option>
+            </select>
+          </div>
+        </div>
+
+             <div class="col-lg-3 col-sm-3 col-md-3 col-xs-2  mob_hidden">
+            <br/>
+            <div class="dropdown pull-right left_m">
+               <select class="form-control account-field dpt-ItemDept" ng-model="vm.SelectedDepartment" 
+                                placeholder="Select Department" >
+                              <option ng-repeat="Department in vm.Departments" 
+                              value="{{Department.DepartmentCode}}" 
+                                ng-selected="vm.selectedDepartmentValue==Department.DepartmentCode">
+                                   {{Department.DepartmentCode}}
+                              </option>
+                </select>
+            </div>
+  
+            <div class="dropdown pull-right">
+              <h4>Dept</h4>
+            </div>
+            <br/> <br/> <br/>
+          </div>
+        <div class="col-lg-2 col-sm-2 col-xs-5 details-submit itm-rgt-wd  clear-site-1 cart-top">
+
+          <div class="btn-group" id="cart">
+            <button class="btn  btn-lg  newcolor cart-click"  type="button">
+            <span class="glyphicon glyphicon-shopping-cart">   <span class="items"> {{vm.caseTotal}} Items </span> <span class="caret"></span>
+            </button>
+            </div>
+            <div class="dropdown-menu dropdown-menu2  drop-tab drop-max1 " id="width-fxt">
+
+<style>
+
+</style>
+
+              <div class="tabl-item">
+                <p class="startt">
+                  {{vm.custId}}, <span style="font-size:13px;">{{vm.custName}}, EOR:{{vm.EOR}}</span>
+                </p>
+                <ul class="ul-item">
+                  <li  class="li-first"><b>Item#</b>
+                  </li>
+
+                  <li class="li-second"><b>Item Name</b>
+                  </li>
+
+                  <li class="li-third"><b>Qty</b>
+                  </li>
+
+                  <li class="li-forth" >
+                  </li>
+                </ul>
+
+
+                <ul class="ul-products" ng-repeat="cartItemData in vm.addCartItem1 track by $index">
+
+                  <li class="li-first">{{cartItemData.ProductCode}}</li>
+
+                  <li class="li-second">{{cartItemData.DisplayName}}</li>
+
+                  <li class="li-third">{{cartItemData.Quantity}}</li>
+
+                  <li  class="li-forth cros-td"  id="reset">
+                      <span class="deleteItem-btn" ng-click="vm.deleteItem(cartItemData.ProductCode)">x</span>
+                  </li>
+
+                </ul>
+               
+              </div>
+            </div>
+          
+        </div>
+        <div class="col-lg-2 col-sm-2 col-xs-4 itm-rgt details-submit clear-site-1 cart-top">
+          <div class="btn-group">
+          <!--  <button class="btn btn-default btn-lg dropdown-toggle colorrr" type="button" data-toggle="modal" aria-haspopup="true" aria-expanded="false" data-target="#myModal"> -->
+          
+			  <a class="btn btn-default btn-lg dropdown-toggle colorrr" ng-href="#/order-entry-addinfo?EOR={{vm.EOR}}&custID={{vm.custId}}" title="Contiune to Order">Continue</a>
+            </button>
+          </div>
+        </div>
+        <!-- details-heading end -->
+      </div>
+      <!-- container end -->
+    </div>
+    <!-- quck-details-bar end -->
+    <div class="container" id="quick-full-tab">
+      <div class="col-sm-12 col-md-12 main-div mob-view-hide clear-site-1 space-div4 space-div5">
+       <!-- <div class="col-lg-2 col-sm-3 col-md-2 sidebar sitemenu">
+          <button type="button" class="btn btn-primary freen">Freetext Search</button>
+          <br/> 
+          <form class="form-search">
+            <div class="input-append">
+              <input type="text" ng-model="searchList" class="input-medium search-query search_butt1" name="s" placeholder="Search" value="" >
+              <br/><br/>
+              <button class="add-on search_butt" type="button" > SEARCH </button>
+              <br/> <br/>
+            </div>
+          </form>
+          <button type="button" class="btn btn-primary freen">Tree Search</button>
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Goya Foods, Inc <span class="sr-only">(current)</span></a></li>
+            <li><a href="#"> > Jersey City(1697)</a></li>
+            <li><a href="#"> > Beans(205)</a></li>
+            <li><a href="#"> > Rice(42)</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href=""> > Rice Mixes(41)</a></li>
+            <li><a href=""> > Sazon(27)</a></li>
+            <li><a href=""> > Condiments(229)</a></li>
+            <li><a href=""> > Beverages(150)</a></li>
+            <li><a href=""> > Pantry(165)</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href=""> > FROZEN(202)</a></li>
+            <li><a href=""> > Miscellaneous(10)</a></li>
+            <br/>
+          </ul>
+          <button type="button" class="btn btn-primary freen">Tree Search</button>
+        
+          <select id="year">
+            <option value="hide">Select Quick Search</option>
+            <option value="Beans">Beans</option>
+            <option value="2011">Olive Oil</option>
+          </select>
+          
+        
+        </div> -->
+
+<style type="text/css">
+.newitm {
+padding-left: 0;
+padding-right: 0;
+margin-top: 70px;
+}
+  .hedr-fd{
+    padding-left: 0;padding-right: 0;position: fixed;z-index: 9;max-width: 1140px;border-bottom: 2px solid rgb(148, 148, 148);background-color:#01459A !important;color:#fff;
+  }
+@media only screen and (min-width:230px) and (max-width:1200px){
+  .hedr-fd{
+    display: none;
+  }
+}
+@media only screen and (min-width:768px) and (max-width:2000px){
+.newfldd{
+  display: none;
+}
+}
+</style>
+
+        <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 newitm">
+     
+<div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 hedr-fd" id="hty">
+
+              <div class="col-lg-2 col-sm-3 col-md-3 col-xs-2 right_bord items-center" style="width:9.5%;">
+              <p class="extra  extrem1 font-size3">Image</p>
+            </div>
+
+          
+
+            <div class="col-lg-4 col-sm-3 col-md-3 col-xs-6  extrem2 right_bord " style="width:16.2%">
+              <p class="extra font-size3">Item Code</p>
+            </div>
+
+            <div class="col-lg-1 col-sm-2 col-md-3 col-xs-2   extrem2 right_bord " style="width:32.4%">
+              <p class="extra font-size3">Name</p>
+            </div>
+
+            <div class="col-lg-1 col-sm-2 col-md-3 col-xs-2  extrem2 right_bord " style="width:8.1%">
+
+
+              <p class="extra font-size3">Per Case</p>
+            </div>
+
+ <div class="col-lg-1 col-sm-2 col-md-3 col-xs-2  extrem2 right_bord " style="width: 8.1%;
+">
+              <p class="extra font-size3">Price</p>
+            </div>
+       
+
+ <div class="col-lg-1 col-sm-2 col-md-3 col-xs-2  extrem2 right_bord " style="width:10%;border-right: 0">
+              <p class="extra font-size3">Action</p>
+            </div>
+
+ </div>
+
+           <div ng-if="!(vm.searchItem|filter:searchList).length" class="norcd-item">No Data Found.</div>
+          <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 newline" ng-repeat="searchList in vm.searchItem  | filter: searchList">
+
+            <div class="col-lg-1 col-sm-2 col-md-3 col-xs-4 right_bord"> <img src="images/iconb.jpg" class="img-responsive center_img"> </div>
+
+            <div class="col-lg-2 col-sm-3 col-md-3 col-xs-2 mb-lahd1 right_bord items-center">
+              <p class="extra  extrem1 font-size3">#{{searchList.ProductCode}}</p>
+            </div>
+
+            <div class="col-lg-2 col-sm-3 col-md-3 col-xs-2 right_bord items-center newfldd ">
+              <p class="extra  extrem1 font-size3">{{searchList.ProductCode}}</p>
+            </div>
+
+            <div class="col-xs-4 col-md-3 hidden_desktop">  </div>
+            <div class="col-lg-4 col-sm-3 col-md-3 col-xs-4  extrem2 right_bord ">
+              <p class="extra font-size3">{{searchList.Name}}</p>
+            </div>
+           <div class="col-lg-1 col-sm-2 col-md-3 col-xs-2  extrem2 right_bord ">
+              <p class="extra font-size3"></p>
+            </div>
+            <div class="col-lg-1 col-sm-2 col-md-3 col-xs-2  extrem2 right_bord ">
+              <p class="extra font-size3"></p>
+            </div>
+            <div  style="text-align: left;float: left;padding-left: 15px;" > <button type="button" title="Add item to Order" class="btn btn-primary freen2" ng-click="vm.addCart(searchList,$index)">Add to Cart</button> </div>
+          </div>
+          <!-- <nav>
+           <div class="pagination-dtl pagination-bx">
+                  <ul class="pagination pagination-sm paginationlist">
+                    <li class="page-item" ng-class="vm.DisablePrevPage()">
+                      <a href ng-click="vm.prevPage()" style="color: #323232!important;"> Prev</a>
+                    </li>
+                     <li ng-repeat="n in vm.range()" ng-class="{active: n == currentPage}" ng-click="vm.setPage(n)">
+                      <a href="#" style="color: #7f7f7f!important;">{{n+1}}</a>
+                    </li>
+                    <li ng-class="vm.DisableNextPage()">
+                      <a href ng-click="vm.nextPage()" style="color: #323232!important;">Next </a>
+                       
+                    </li>
+                  </ul>           
+          </div>
+          </nav> -->
+        </div>
+
+         <div class="mob-fxclear3"></div>
+      </div>
+    </div>
+    <cart-modal count="vm.quantity"  cart="vm.newCartItem" inc="vm.plusCount()" dec="vm.minusCount()" confirmcart="vm.confirmCart()"></cart-modal>
+    </div>
+
+    <ng-include src="headerUrl"></ng-include>

@@ -1,0 +1,603 @@
+<div hide-toggle>
+ <!-- Bread Crumb
+      <section>
+         <div class="col-md-12 breadcrumbs-links">
+          
+            <div class="container">
+                <ol class="breadcrumb br-quk    bd-color">
+                 <a ui-sref="login" class="color2">Home</a>>
+                 <a ui-sref="orderentryaddinfo" class="color2"> Quick-Order-Entry</a>
+               </ol>
+            </div>
+         
+         </div>
+         
+      </section> -->
+    <!--   <div class="col-sm-12 col-md-12 quck-details-bar clear-site-1">
+       
+
+         <div class="container" id="pick_up_order">
+            <div class="col-md-6 details-heading clear-site-1">
+               <p>Pick Up Order Screen</p>
+            </div>
+            
+            <div  class="col-md-6 details-submit clear-site-1 open-submit">
+            
+            </div>
+            
+         </div>
+         
+      </div>
+      Customer-details-bar end --> 
+      <section>
+         <div class="container" id="quick-full-tab">
+
+            <div class="col-md-12 main-div mob-view-hide mob-qk-hide clear-site-1" id="rem-scroll">
+            <!--  <div   style="width:100%; float:left; background-color:red; height:80px;"></div> -->
+ 
+             <!-- Pickup Class -->
+               <div class="col-sm-12 col-md-12 quick-order-form  clear-site-1 qk-remove" id="qk-remove-space">
+                  <!-- quick-order-form desktop start--> 
+
+
+
+                  <form>
+                     <ul class="col-sm-6 col-md-6 inner-form-left">
+                        <li>
+                           <span class="e-first">EOR#</span> 
+             <div class="nowrap-div">                       
+           <p style="width: 46%;"><input  ng-disabled="true" type="text" class="EOR-btn" ng-model="vm.EOR" placeholder="" style="width: 96%;" > </p>
+                 <span>  Scan <input  type="checkbox" ng-model="vm.isScan" /></span> 
+                    <div class="col-md-12 table-hide-info table-hide-mob">
+                  <a  ng-click="vm.toggleExtraInfo()">Show/Hide</a>
+               </div> 
+                   <div>
+                    
+                        <style type="text/css">
+                        
+                        .EOR-btn{
+                        display: block;
+                        width: 42%;
+                        height: 34px;
+                        padding: 6px 12px;
+                        font-size: 14px;
+                        line-height: 1.42857143;
+                        color: #0505c7;
+                        background-color: #fff;
+                        background-image: none;
+                        border: 1px solid #ccc;
+                        font-weight:bold;
+                        }
+                        
+                      ::-webkit-input-placeholder {
+                      font-size: 14px;
+                      color: #003E89;
+                     
+                      text-align: left;
+
+
+                     }
+                     :-moz-placeholder { /* older Firefox*/
+                      font-size:14px;
+                      color: #003E89;
+                     
+                       text-align: left;
+
+
+                     }
+                     ::-moz-placeholder { /* Firefox 19+ */ 
+                      font-size: 14px;
+                      color: #003E89; 
+                      
+                      text-align: left;
+
+
+                     } 
+                     :-ms-input-placeholder { 
+                      font-size: 14px; 
+                      color: #003E89;
+                      
+                      text-align: left;
+
+                      
+                     }                    
+                     
+
+                       </style>
+                             
+                        </li>
+                        <li >
+                           <span>Customer</span>
+                           <p class="account">
+                             <!-- <select class="form-control account-field" ng-model="vm.SelectedCustomer" 
+                                placeholder="Select Customer" ng-change="vm.onCustomerChanged()">
+                              <option ng-repeat="Customer in vm.Customers" value="{{Customer.UserID}}" 
+                              ng-selected="vm.selectedCustomerValue==Customer.UserID">
+                                   {{Customer.UserID +"--"+Customer.Name}}
+                              </option>
+                              </select> -->
+                               <div style="height: 48px;"><ac-select  ac-model='vm.SelectedCustomer' ac-options='cust as cust.Name for cust in vm.constumerDetails()'
+                                ac-change="vm.onCustomerChanged(value)"> <option class="col-sm-2"  value="" selected></option></ac-select>
+                                
+                                <!-- <select  kendo-combo-box k-select="vm.onCustomerChanged(value)" 
+                k-placeholder="'Select product'"
+                k-data-text-field="'Name'"
+                k-data-value-field="'Name'"
+                k-filter="'contains'"
+                k-auto-bind="false"
+                k-min-length="2"
+                k-data-source="vm.custData"
+                style="width: 100%"  ></select> -->
+                              </div>
+
+                           <!--           <ac-select 
+                              ac-model='vm.custSelected' 
+                              ac-options='cust as cust.Name for cust in vm.customerDetails()'
+                              ac-change="vm.setCustId(value)"> 
+                              <option class="col-sm-2"  value="" selected>All</option></ac-select>  -->
+ 
+                           </p>
+                          <!--     <div class="account-icon"><img src="images/account-icon.png">                           
+
+                           </div> -->
+                        </li></br></br>
+                      <li ng-show="vm.ExtraInfo" style="z-index: 9;position: relative;">
+                           <span>Delivery</span>
+                           <p><input type="text" id="datepicker1"  ng-disabled="true" class="calndr-fld" ng-model="vm.DeliveryDate" date-format="MM-dd-yyyy"><a  ng-click="validateCustomer()" class="pass-fildcust">By Pass Customer</a></p>
+                           
+                     </li > 
+                        <li ng-show="vm.ExtraInfo">
+                           <span>Amt Collected $</span>
+                           <p><input type="text"  name="amount" class="form-control" ng-model="vm.AmountCollected"  placeholder="Amount" /></p>
+                        </li>
+                        <li ng-show="vm.ExtraInfo">
+                           <span>Comments </span>
+                           <p><textarea class="txtarea"  style="height: 81px;" ng-model="vm.Comment"></textarea></p>
+                        </li>
+                             <li >
+                        <div >
+                        
+                         <select class="form-control account-field dpt-label" ng-model="vm.SelectedDepartment" 
+                                placeholder="Select Department" >
+                              <option ng-repeat="Department in vm.Departments" 
+                              value="{{Department.DepartmentID}}" 
+                                ng-selected="vm.selectedDepartmentValue==Department.DepartmentID">
+                                   {{Department.DepartmentCode}}
+                              </option>
+                        </select>
+                         <!--  <span>Item </span> -->
+                          <form>
+                        <input type="tel" class="form-control item-num dpt-lab-itm" ng-model="vm.ItemCode"  placeholder="Item / UPC#"  ng-keypress="addItem($event,'d')" autocorrect="off"
+                          focus-me = "{{vm.setItemCodeFocus}}" id="txtItemCode" required/> 
+                          </form>
+
+                    <input type="text" 
+                    class="form-control  dpt-lab-qty" id="txtCaseQtyDesktop"
+                    onfocus="this.setSelectionRange(0, this.value.length);"
+                   ng-model="vm.CaseQty" ng-keypress="addItem($event,'')" placeholder="Case Qty"/>
+
+                    <input type="number" ng-show="vm.isPickup" class="form-control  dpt-lab-qty" onfocus="this.select();" ng-keypress="addItem($event,'')" ng-model="vm.UnitQty"  placeholder="Case Qty"/>
+
+               <input  title="Add item to Order" type="button" class="btn btn-addItem open-order" ng-click="btnAddItem('d')" value="Add">
+                           <p>
+
+ 
+                           </p>
+                           </div>
+                        </li>
+                     </ul>
+                     <ul class="col-sm-6 col-md-6 inner-form-right">
+                        <li>
+                           <span>Pick Up</span>
+                           <p> <input type="checkbox" ng-disabled="ctDisabled"  ng-model="vm.isPickup" ng-change="pickUpChange()">
+
+                            <a ng-show="!vm.isPickup" title="Search items list" class="btn btn-default btn-searchItem" ng-href="#/search-item?EOR={{vm.EOR}}&custID={{vm.selectedCustomerValue}}">Search Item</a>
+
+                               <a  title="Display Open Orders" class="btn btn-default btn-searchItem" ng-href="#search-order-entry?isPending=true&custID={{vm.selectedCustomerValue}}">{{vm.pendingOrderCount}} -- Open Orders</a>
+
+                           </p>
+                          </li>
+                        <li>
+                           <span>Day/Not Day</span>
+                           <p>
+                             
+
+                               <select class="form-control delivery-drop" ng-model="vm.SelectedDay" ng-options="Day.Value as Day.Day for Day in Days" 
+                               ng-change="vm.checkDaySelection('1')"></select>
+
+                               <select class="form-control delivery-drop" ng-model="vm.SelectedNotDay" ng-options="Day.Value as Day.Day for Day in Days" 
+                               ng-change="vm.checkDaySelection('2')"></select>
+
+                              <!-- <select class="form-control delivery-drop" ng-model="vm.SelectedNotDay" >
+                                  <option ng-repeat="nd in Days" value="{{nd.Value}}"> {{nd.Day}} </option>
+                              </select> -->
+                           </p>
+                        </li>
+                        <li ng-show="vm.ExtraInfo">
+                           <span>PO#</span>
+                           <p>
+                     
+                       <input type="text" class="form-control" ng-model="vm.ClientPONumber"  placeholder="PO Number">
+                           
+                           </p>
+                        </li>
+                        
+                        <li ng-show="vm.ExtraInfo">
+                           <span>Promo Code</span>
+                           <p>
+                           <select class="form-control account-field" ng-model="vm.SelectedPromotion" 
+                                placeholder="Select Promotion" >
+                              <option value="">--Select Promo Code--</option>
+                           <option  ng-repeat="Promotion in vm.Promotions" 
+                                    value="{{Promotion.PromoCode}}"  
+                                    ng-selected="vm.selectedPromoValue==Promotion.PromoCode">
+
+                                   {{Promotion.PromoCode +"--"+Promotion.PromoName}}
+                           </option>
+
+                        </select>
+                           </p>
+                        </li>
+                        <li ng-show="vm.ExtraInfo">
+                           <span>Select Template</span>
+                           <p>
+                              <select class="form-control" ng-model="vm.SelectedTemplate" placeholder"Select Template" 
+                               ng-change="vm.onTemplateSelected()">
+                               
+                                    <option ng-repeat="Template in vm.Templates" value="{{Template.BasketID}}">
+                                   {{Template.TemplateName}}
+                              </option>
+                              </select>
+                           </p>
+                        </li>
+                        <li ng-show="vm.ExtraInfo">
+                             <span>Template Name</span>
+                          <p>                     
+                            <input type="text" class="form-control" ng-model="vm.TemplateName"  placeholder="Enter Template Name">                           
+                           </p>                
+                        </li>
+                        
+                     </ul>
+
+                  </form>
+               </div>
+               <!-- quick-order-form desktop end--> 
+            </div>
+
+          </div>
+         
+         <div class="col-md-12 quick-order-form form-neww1   mob-qk-order clear-site-1 " ng-class="{'checkHeight':vm.isPickup == true && vm.ExtraInfo == false,'hh':vm.ExtraInfo == true}" id='qk-remove-space1'>
+
+<!-- abcd test -->
+<style type="text/css">
+  .extdtl{
+    list-style: none;
+    float: left;
+    width: 100%;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    height: 20px;
+  }
+    .extdtl li{
+    list-style: none;
+    float: left;
+    color:#000;
+    margin-right: 5px;
+    color: green;
+  }
+  .new-ad-stp1 {
+padding: 9px 9px;
+}
+@media only screen and (max-width: 520px) and (min-width: 230px){
+.quick-order-form {
+padding-bottom: 23px !important;
+}
+}
+</style>
+<div  class="new-ad-stp1" id="fixedDiv">
+
+ <label id="" style="padding-left: 0px; color: blue;"  > 
+                     {{vm.CustomerName}}</label>                  
+
+
+
+<ul class="extdtl">
+ <li id="lblMessage1" style="padding-left: 2px; color: green;"  > 
+                       {{vm.Message}}</li>
+<li>Cases: &nbsp; <span style="font-weight: bolder;font-size: 13px;">{{getCaseQtyTotal()}}</span> </li>
+<li>Total$: &nbsp; <span style="font-weight: bolder;font-size: 13px;">{{getCasePriceTotal()}}</span> </li>
+<!-- <li> EOR : {{vm.EOR}}</li> -->
+</ul>
+
+ <!--<label id="lblMessage" class="nowrap-div" style="padding-left: 10px; font-size: 14px;color: green;"  > 
+                       {{vm.Message}}   &nbsp;   &nbsp;  &nbsp;  
+                        Case Total: <span style="font-size: 12pt;
+font-weight: bolder;">{{getCaseQtyTotal()}} </span>
+
+
+ &nbsp;  &nbsp;  &nbsp;  
+                        EOR : {{vm.EOR}}
+
+                        </label>-->
+
+   <li class="col-xs-4 clear-site-1"><p>
+<input type="tel" class="form-control field-hgtt item-num ng-pristine ng-valid ng-touched" ng-model="vm.ItemCode" inputmode="numeric" placeholder="Item / UPC#" autocorrect="off" id="txtItemCodeMobile" focus-me="" ng-keyup="addItem($event,'m')" style="width: 100%;float:left">
+
+ </p></li>
+
+
+<li class="col-xs-5  clear-site-5">
+<p><input type="button" class="btn btn-minus open-order li-skk" ng-click="updateCaseQuantityBox('-1')" value="-" >
+<input type="tel" ng-model="vm.CaseQty" class="form-control field-hgtt li-mdd item-num case- field ng-pristine ng-valid ng-touched" inputmode="numeric" onfocus="this.setSelectionRange(0, this.value.length)" id="txtCaseQtyMobile" onclick="this.select();" placeholder="Case Qty" ng-keypress="addItem($event,'m')">
+<input type="button" class="btn btn-plus open-order li-skk" ng-click="updateCaseQuantityBox('1')" value="+">
+ </p>
+</li>
+
+   <li class="col-xs-6  clear-site-1 add-btnn"><p>
+ <input type="button" title="Add item to Order " style="width: 100%;float:left;    font-size: 12px;color: #fff;" class="btn btn-addItem new-sp1 open-order field-hgtt" ng-click="btnAddItem('m')" value="Add">
+ </p></li>
+
+</div>
+
+
+    <span style="float:right">  <a ng-click="vm.toggleExtraInfo()" class="hideshw" >Show/Hide</a></span>
+
+<span style="float:right; margin-right:5px;">  Scan <input  type="checkbox" ng-model="vm.isScan" /></span>
+
+
+   
+                     <form>
+
+                        <ul class="col-md-6 inner-form-left">
+
+
+                           <div class="div-clr"></div>
+                           <li>
+                              <span>Customer</span>
+                              <p class="account">
+                    <!--   <select class="form-control account-field" ng-model="vm.SelectedCustomer" id="drpCustomer"
+                                placeholder="Select Customer"  ng-change="vm.onCustomerChanged()">
+                                <option ng-repeat="Customer in vm.Customers" value="{{Customer.UserID}}"
+                                ng-selected="vm.selectedCustomerValue==Customer.UserID">
+                                {{Customer.UserID +"--"+Customer.Name}}
+                              </option>
+                        </select> 
+                          <div class="account-icon"><img src="images/account-icon.png"></div>-->
+
+                              <div style="height:38px;width:100%;"><ac-select  ac-model='vm.SelectedCustomer' ac-options='cust as cust.Name for cust in vm.constumerDetails()'
+                                ac-change="vm.onCustomerChanged(value)"> <option class="col-sm-2"  value="" selected></option></ac-select>
+                              </div>
+
+                              </p>
+                            
+                           </li></br>
+                            <div class="div-clr" style="margin-top:20px;"></div>
+                           <li ng-show="vm.ExtraInfo">
+                              <span>Pick Up</span>
+                              <p> <input type="checkbox" style="background: url('http://refundfx.com.au/uploads/image/checkbox_full.png');background-size: 20px;background-repeat: no-repeat;width: 20px;height: 20px;margin-right: 30px;z-index:99999"  ng-disabled="ctDisabled" ng-model="vm.isPickup" ng-change="pickUpChange()" >&nbsp;<span style="margin-bottom:2px;width:30px;"><b>Yes</b></span>
+                               <a  title="Display Open Orders" class=" " style="padding-left: 20px;" ng-href="#search-order-entry?isPending=true&custID={{vm.SelectedCustomer}}">{{vm.pendingOrderCount}} -- Open Orders</a>
+                               </p>
+
+                           </li>
+                           <div class="div-clr"></div>
+                           <li ng-show="vm.ExtraInfo">
+                              <span>Delivery</span>
+                              <p><input type="text" id="datepicker" ng-disabled="true" ng-model="vm.DeliveryDate" date-format="MM-dd-yyyy"><a ng-click="validateCustomer()" style="cursor:pointer">By Pass Customer</a></p>
+
+                           </li>
+                           <div class="div-clr"></div>
+                           <li ng-show="vm.ExtraInfo">
+                              <span>Day/Not Day</span>
+                              <p>
+                               <select class="form-control delivery-drop" ng-model="vm.SelectedDay" ng-options="Day.Value as Day.Day for Day in Days" 
+                               ng-change="vm.checkDaySelection('1')"></select>
+
+                               <select class="form-control delivery-drop" ng-model="vm.SelectedNotDay" ng-options="Day.Value as Day.Day for Day in Days" 
+                               ng-change="vm.checkDaySelection('2')"></select>
+                              </p>
+                           </li>
+                           <div class="div-clr"></div>
+                           <li ng-show="vm.ExtraInfo">
+                              <span>PO#</span>
+                              <p>
+                                 <input type="text" ng-model="vm.ClientPONumber" class="form-control"  placeholder="PO Number">
+                              </p>
+                           </li>
+                           <div class="div-clr"></div>
+                           <li ng-show="vm.ExtraInfo">
+                              <span>Amt Collected $</span>
+                              <p><input type="text" class="form-control" ng-model="vm.AmountCollected" placeholder="Amount" ></p>
+                           </li>
+                           <div class="div-clr"></div>
+                           <li ng-show="vm.ExtraInfo">
+                              <span>Promo Code</span>
+                              <p>
+                                <select class="form-control account-field" ng-model="vm.SelectedPromotion" 
+                                placeholder="Select Promotion">
+                                  <option value="">--Select Promo Code--</option>
+                              <option ng-repeat="Promotion in vm.Promotions" value="{{Promotion.PromoCode}}">
+                              
+                                   {{Promotion.PromoCode +"--"+Promotion.PromoName}}
+                              </option>
+                        </select>
+                              </p>
+                           </li>
+                           <div class="div-clr"></div>
+                           <li class="mobile-comnt" ng-show="vm.ExtraInfo"> 
+                              <!--mobile device-->
+                              <span>Comments </span>
+                              <p><textarea class="txtarea" ng-model="vm.Comment"></textarea></p>
+                           </li>
+                           <div class="div-clr"></div>
+                           <!--mobile device-->
+                           <li ng-show="vm.ExtraInfo">
+                              <span>Select Template</span>
+                              <p>
+                                
+                            <select class="form-control" ng-model="vm.SelectedTemplate" placeholder"Select Template" 
+                              ng-change="vm.onTemplateSelected()">
+                                <option>Select Template Name</option>
+                                <option ng-repeat="Template in vm.Templates" value="{{Template.BasketID}}">
+                                   {{Template.TemplateName}}
+                                </option>
+                             </select>
+                           </p>
+                               
+                           </li>
+                           <li ng-show="vm.ExtraInfo">
+                             <p style="width:30%;"> <span>Template</span> </p>
+                                  <p> 
+                                   <input type="text" class="form-control" ng-model="vm.TemplateName"  placeholder="Enter Template Name" /> 
+                                  </p>          
+                           </li>
+                           <div class="div-clr"></div>
+                           <li class="tab-comnt">
+                              <span>Comments </span>
+                              <p><textarea class="txtarea" ng-model="vm.Comment" ></textarea></p>
+                           </li>
+                         <div class="div-clr"></div>
+                           <li class="col-xs-6 mob-full clear-site-1">
+                                <span>Dept </span>
+                              <p>
+                            <select class="deptDrop dtp-new" ng-model="vm.SelectedDepartment" 
+                                    placeholder="Select Department">
+                              <option ng-repeat="Department in vm.Departments" 
+                                      value="{{Department.DepartmentID}}" 
+                                      ng-selected="vm.selectedDepartmentValue==Department.DepartmentID">
+                               {{Department.DepartmentCode}}
+                              </option>
+                            </select>
+                             <a  Search items list ng-show="!vm.isPickup" title="Search items list" class="btn go-searchitm btn-primary open-order new-dr" ng-href="#/search-item?EOR={{vm.EOR}}&custID={{vm.selectedCustomerValue}}">Search Item</a>
+                              </p>
+                           </li>
+
+                           <li class="col-xs-6 mob-full clear-site-1  hiditem">
+                              <span>Item </span>
+                             <p>
+                            <form>
+                             <input type="tel" class="form-control item-num" ng-model="vm.ItemCode"    inputmode="numeric" placeholder="Item / UPC#"  autocorrect="off"
+                             id="txtItemCodeMobile" focus-me = "{{vm.setItemCodeMobileFocus}}" 
+                             ng-keyup="addItem($event,'m')">
+                                 <input type="button" title="Add item to Order" class="btn btn-addItem new-sp1 open-order" ng-click="btnAddItem('m')" value="Add"/>
+                                 </form>
+                              </p>
+                           </li>
+                           <li class="col-xs-6 mob-full clear-site-5 hiditem">
+                              <span>Cases</span>
+                              <p>                     
+                       
+                                  <input type="button" class="btn btn-minus open-order" ng-click="updateCaseQuantityBox('-1')" value="-"/>
+
+                                  <input type="tel" ng-model="vm.CaseQty" class="form-control item-num case- field" inputmode="numeric"
+                                  onfocus="this.setSelectionRange(0, this.value.length)"
+                                   id="txtCaseQtyMobile" 
+                                   onClick="this.select();" placeholder="Case Qty" ng-keypress="addItem($event,'m')"/>
+
+                                   <input type="button" class="btn btn-plus open-order" ng-click="updateCaseQuantityBox('1')" value="+"/>
+                              </p>
+                           </li>
+                            <li class="col-xs-6 mob-full clear-site-5" ng-show="vm.isPickup">
+                          <span >Unit</span>
+                           <p class="new-nw">
+                             <input ng-show="vm.isPickup" type="button" class="btn btn-minus open-order" ng-click="updateUnitQuantityBox('-1')" value="-"/>
+
+                              <input type="tel" ng-model="vm.UnitQty" ng-show="vm.isPickup" class="form-control item-num  case-field" onfocus="this.select()" inputmode="numeric"  placeholder="Units" ng-keypress="addItem($event,'m')"/>
+
+                               <input ng-show="vm.isPickup" type="button" class="btn btn-plus open-order" ng-click="updateUnitQuantityBox('1')" value="+"/>
+                           </p>
+                        </li>
+                        </ul>
+                     </form>
+
+
+
+                  </div>
+          
+                  </div>
+            <div class="right-space">
+              <div class="nowrap-div" style="width:100%;margin-bottom: 13px; float:left; height:10px;" >
+                  <label> Case Total:  {{getCaseQtyTotal()}}  </label>
+
+                       <label ng-show="vm.isPickup" style="padding-left: 10px;"  >  Unit Total:  {{getUnitQtyTotal()}}  </label>
+                       &nbsp;&nbsp;&nbsp;
+                       <label> Total $:  {{getCasePriceTotal()}}  </label>
+                        &nbsp;&nbsp;&nbsp;
+                       <label id="lblMessage" style="padding-left: 10px; color: green;"  > 
+                       {{vm.Message}}</label>
+              </div>
+
+               <div class="col-sm-12 col-md-12 table-products-record  mobile-table-view clear-site-3 clear-nw">
+                  <!-- table-products-record start   <div class="main-section right-space"> -->
+                  <table class="table over-x" >
+                                  
+                     <thead> 
+                        <tr>
+                        <th>Dept</th>
+                           <th>Item</th>
+                           <th>Product</th>                           
+                           <th>Cases</th>
+                           <th ng-show="vm.isPickup">Units</th>
+                           <th>Case Price</th>
+                           <th></th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        
+                   <tr ng-repeat="orderData in vm.orderItemData" ng-class="{'font-size2 itemBackground':orderData.IsRestricted=='True','font-size2 itemOutOfStockBackground':orderData.IsOutOfStock=='True'}" class="font-size2" >
+                          <td class="font-size2">{{orderData.Dept}}</td>
+                          <td class="font-size2">{{orderData.ProductCode}} </td>
+                          <td class="font-size2" style="text-align:left;">{{orderData.DisplayName}}</td>                        
+
+                          <td class="font-size2 nowrap-div" >
+                              <input ng-disabled="vm.DisableMinusBtn" type="button" class="btn btn-minus new-odr1 open-order" ng-click="updateCaseQuantity('-1',orderData.ProductCode,orderData.Quantity,orderData.OrdUnits)" value="-"/>
+
+                             <input type="tel" ng-model="orderData.Quantity" value="{{orderData.Quantity}}" class="quantityTxtBox" ng-blur ng-keypress="updateCaseQuantity($event,orderData.ProductCode,orderData.Quantity,orderData.OrdUnits)" ng-readonly="vm.DisablePlusBtn"/>
+
+                              <input ng-disabled="vm.DisablePlusBtn" type="button" class="btn btn-plus new-odr2 open-order" ng-click="updateCaseQuantity('1',orderData.ProductCode,orderData.Quantity,orderData.OrdUnits)" value="+"/>
+                          </td>
+
+                          <td ng-show="vm.isPickup" class="font-size2 ">
+
+                               <input type="button" class="btn btn-minus new-odr1 open-order" ng-click="updateUnitQuantity('-1',orderData.ProductCode,orderData.OrdUnits,orderData.Quantity)" value="-"/>
+
+
+                              <input type="tel" ng-model="orderData.OrdUnits" value="{{orderData.OrdUnits}}"  class="quantityTxtBox" ng-blur ng-keypress="updateUnitQuantity($event,orderData.ProductCode,orderData.OrdUnits,orderData.Quantity)" />
+
+                              <input type="button" class="btn btn-plus new-odr2 open-order" ng-click="updateUnitQuantity('1',orderData.ProductCode,orderData.OrdUnits,orderData.Quantity)" value="+"/>
+                          </td>
+
+                        <td class="font-size2">{{orderData.CasePrice * orderData.Quantity| currency:''}} </td>
+
+                          <td class="btn-deleteOrdeItem" ng-click="vm.deleteItem(orderData.PONumber,orderData.ProductCode)" > X</td>
+
+                  </tr>
+              
+                        
+                     </tbody>
+                    
+                  </table>
+                  <!-- table -->
+               </div>
+               <!-- table-products-record end -->
+               <!-- <div class="col-sm-12 col-md-12 table-total-Q">
+                  Total Quantity: 0
+ 
+               </div> 
+               <!-- table-total-Q end -->
+               <div class="col-md-12 table-sub table-sub-mob">
+                  <input type="submit" class="form-control qal-sub" ng-click="vm.submitOrder()"  value="Send" title="Submit order"  ng-disabled="false" >
+                  <input type="submit" title="Delete all items from order" ng-click="vm.DeleteAllItems()" class="form-control" value="DELETE ALL">
+               </div>
+               <!-- table-products-record end -->
+               <div class="col-md-12 table-hide-info table-hide-mob ll">
+                  <a  ng-click="vm.toggleExtraInfo()">Show/Hide</a>
+               </div>
+               <!-- table-total-Q end -->
+
+            </div>
+         </div>
+         </div><div class="mob-fxclear1"></div></div>
+      </section>
+</div>
+
+  <ng-include src="headerUrl"></ng-include>

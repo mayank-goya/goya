@@ -1,0 +1,230 @@
+<div hide-toggle>
+<section>
+    <!-- breadcrumbs-links start -->
+    <div class="col-md-12 breadcrumbs-links color1 bd-color bread-comm">
+        <div class="container">
+            <ol class="breadcrumb br-crm    bd-color">
+                <a ui-sref="login" class="color1">Home</a>>
+                <a ui-sref="login" class="color1"> Login</a>
+            </ol>
+        </div>
+        <!-- container -->
+    </div>
+    <!-- breadcrumbs-links end -->
+</section>
+<section class="mob-bk-col">
+    <div class="col-md-12 create-account-hdg clear-site-1">
+        <!-- Customer-details-bar end -->
+        <div class="container">
+            <div class="col-md-6 Create-account-hdg">
+                Create Account
+            </div>
+            <!-- details-heading end -->
+        </div>
+        <!-- container end -->
+    </div>
+    <!-- Customer-details-bar end -->
+
+
+    <div class="container ">
+        <div class="col-md-12 create-account-form space-div2 clear-site-1 create-desktop">
+            <!-- create-account-form  start-->
+            <form name="form" ng-submit="vm.singupFunction(vm.submitRequest)">
+                <ul class="col-md-4 inner-form-left clear-site-4">
+                    <li>
+                        <p>
+                             <select class="form-control" ng-options="item.Name as item.Name for item in vm.user.usertype" ng-model="vm.submitRequest.selectUsertype">
+
+                            </select>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                             <select class="form-control" ng-options="item.Name as item.Name for item in vm.city.jerseyCity" ng-model="vm.submitRequest.selectJerseycity">
+                            </select>
+
+                        </p>
+                    </li>
+                    <li>
+                        <p><input type="text" class="form-control" ng-model="vm.submitRequest.username" placeholder="Enter Username" required></p>
+                    </li>
+                    <li>
+                        <p><input type="text" class="form-control" ng-model="vm.submitRequest.password" placeholder="Enter Password" required></p>
+                    </li>
+                    <li>
+                        <p><input type="text" class="form-control" ng-model="vm.submitRequest.confirmpass" placeholder="Confirm Password" required></p>
+                    </li>
+                    <li>
+                        <p><input type="text" class="form-control" ng-model="vm.submitRequest.name" placeholder="Enter Name" required></p>
+                    </li>
+                    <li>
+                        <div class="col-md-8 label-account clear-site-1">Order Acknowledgement </div>
+                        <div class="col-md-4 label-check"> <input type="checkbox" name="name" ng-model="vm.submitRequest.order" class="yes" id="inlineCheckbox1" /> <span class="lebel-hd">Yes</span></div>
+                    </li>
+                </ul>
+                <ul class="col-md-4 inner-form-right">
+                    <li>
+                        <p><input type="text" class="form-control" ng-model="vm.submitRequest.street" placeholder="Enter Street"></p>
+                    </li>
+                    <li>
+                        <p><input type="text" class="form-control" ng-model="vm.submitRequest.city" placeholder="Enter City"></p>
+                    </li>
+                    <li>
+                        <p><input type="text" class="form-control" ng-model="vm.submitRequest.state" placeholder="Enter State"></p>
+                    </li>
+                    <li>
+                        <p>
+                         <select class="form-control" ng-options="item.Name as item.Name for item in vm.state.unitedState" ng-model="vm.submitRequest.selectUnitedstate">
+                        </select>
+
+                        </p>
+                    </li>
+                    <li>
+                        <p><input type="text" class="form-control" placeholder="#####"></p>
+                    </li>
+                    <li>
+                        <p><input type="text" class="form-control" placeholder="##########"></p>
+                    </li>
+                    <li>
+                        <div class="col-md-8 label-account clear-site-1">Attach Order Acknowledgement </div>
+                        <div class="col-md-4  label-check"><input type="checkbox" name="name" ng-model="vm.submitRequest.attachorder" class="yes" id="inlineCheckbox1" /><span class="lebel-hd">Yes</span></div>
+                    </li>
+                </ul>
+                <ul class="col-md-4 inner-form-right">
+                    <li>
+                        <p><input type="text" class="form-control" ng-model="vm.submitRequest.email" placeholder="Enter Email ID" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  required></p>
+                    </li>
+                    <li>
+                        <p><input type="text" class="form-control" ng-model="vm.submitRequest.imei"  placeholder="Handheld Device IMEI Number"></p>
+                    </li>
+                    <li>
+                        <p><input type="text" class="form-control" ng-model="vm.submitRequest.organization" placeholder="Organization Name"></p>
+                    </li>
+                    <li>
+                        <p><input type="text" class="form-control" ng-model="vm.submitRequest.contactperson" placeholder="Contact Person Name"></p>
+                    </li>
+                    <li>
+                        <p><input type="text" class="form-control" ng-model="vm.submitRequest.contactpersonemail"  placeholder="Contact Person Email Id"></p>
+                    </li>
+                    <li>
+                        <p>
+
+                            <select class="form-control" ng-options="item.Name as item.Name for item in vm.select.picklist" ng-model="vm.submitRequest.selectPicklist">
+                            </select>
+
+                        </p>
+                    </li> 
+                </ul>
+                <div class="col-sm-6 col-sm-push-6 create-ac-btn">
+                    <button type="submit"  class="btn btn-primary submit">CREATE ACCOUNT</button>
+                </div>
+                <div class="col-sm-6 col-sm-pull-6 cancel-link clear-site-4">
+                    <a href="#">CANCEL</a>
+                </div>
+            </form>
+        </div>
+        <!-- create-account-form  end-->
+        <div class="col-md-12 create-account-form clear-site-1 create-tablet">
+            <!--mobile view create-account-form  start-->
+            <form name="form" ng-submit="vm.singupFunc(vm.submitRequest)">
+                <ul class="col-sm-6 col-md-6 inner-form-left">
+                    <li>
+                        <p>
+                            <select class="form-control" ng-options="item.Name as item.Name for item in vm.user.usertype" ng-model="vm.submitRequest.selectUsertype">
+
+                            </select>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <select class="form-control" ng-options="item.Name as item.Name for item in vm.city.jerseyCity" ng-model="vm.submitRequest.selectJerseycity">
+                            </select>
+                        </p>
+                    </li>
+                    <li>
+                        <p><input type="text" class="form-control" ng-model="vm.submitRequest.username" placeholder="Enter Username" required></p>
+                    </li>
+                    <li>
+                        <p><input type="text" class="form-control" ng-model="vm.submitRequest.password" placeholder="Enter Password" required></p>
+                    </li>
+                    <li>
+                        <p><input type="text" class="form-control" ng-model="vm.submitRequest.confirmpass" placeholder="Confirm Password" required></p>
+                    </li>
+                    <li>
+                         <p><input type="text" class="form-control" ng-model="vm.submitRequest.name" placeholder="Enter Name" required></p>
+                    </li>
+                    <li>
+                        <p><input type="text" class="form-control" ng-model="vm.submitRequest.street" placeholder="Enter Street"></p>
+                    </li>
+                    <li>
+                        <p><input type="text" class="form-control" ng-model="vm.submitRequest.city" placeholder="Enter City"></p>
+                    </li>
+                    <li>
+                        <p><input type="text" class="form-control" ng-model="vm.submitRequest.state" placeholder="Enter State"></p>
+                    </li>
+                    
+                </ul>
+                <ul class="col-sm-6 col-md-6 inner-form-right">
+                     <li>
+                        <p>
+                         <select class="form-control" ng-options="item.Name as item.Name for item in vm.state.unitedState" ng-model="vm.submitRequest.selectUnitedstate">
+                        </select>
+
+                        </p>
+                    </li>
+                    <li>
+                        <p><input type="text" class="form-control" placeholder="#####"></p>
+                    </li>
+                    <li>
+                        <p><input type="text" class="form-control" placeholder="##########"></p>
+                    </li>
+                    <li>
+                        <p><input type="text" class="form-control" ng-model="vm.submitRequest.email" placeholder="Enter Email ID" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  required></p>
+                    </li>
+                    <li>
+                        <p><input type="text" class="form-control" ng-model="vm.submitRequest.imei"  placeholder="Handheld Device IMEI Number"></p>
+                    </li>
+                    <li>
+                        <p><input type="text" class="form-control" ng-model="vm.submitRequest.organization" placeholder="Organization Name"></p>
+                    </li>
+                    <li>
+                        <p><input type="text" class="form-control" ng-model="vm.submitRequest.contactperson" placeholder="Contact Person Name"></p>
+                    </li>
+                    <li>
+                        <p><input type="text" class="form-control" ng-model="vm.submitRequest.contactpersonemail"  placeholder="Contact Person Email Id"></p>
+                    </li>
+                    <li>
+                        <p>
+
+                            <select class="form-control" ng-options="item.Name as item.Name for item in vm.select.picklist" ng-model="vm.submitRequest.selectPicklist">
+                            </select>
+
+                        </p>
+                    </li>
+                </ul>
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <div class="col-md-8 label-account clear-site-1">Order Acknowledgement</div>
+                    <div class="col-md-4 label-check"><input type="checkbox" name="name" ng-model="vm.submitRequest.order" class="yes" id="inlineCheckbox1" />
+
+                        <span class="lebel-hd">Yes</span></div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <div class="col-md-8 label-account clear-site-1">Attach Order Acknowledgement</div>
+                    <div class="col-md-4  label-check"><input type="checkbox" name="name" ng-model="vm.submitRequest.attachorder" class="yes" id="inlineCheckbox1" /><span class="lebel-hd" style="margin-right: 2px;
+">                      &nbsp;Yes</span></div>
+                </div>
+                <div class="col-sm-6 col-sm-push-6 create-ac-btn">
+                    <button type="submit" class="btn btn-primary submit  tab-center">CREATE ACCOUNT</button>
+                </div>
+                <div class="col-sm-6 col-sm-pull-6 cancel-link">
+                    <a href="#">CANCEL</a>
+                </div>
+            </form>
+        </div>
+        <!--mobile view create-account-form  end-->
+        <!-- Delivery-form end -->
+    </div>
+    <!-- container -->
+</section>
+
+</div>

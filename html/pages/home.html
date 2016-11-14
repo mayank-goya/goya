@@ -1,0 +1,26 @@
+
+<div hide-toggle>
+ <section class="home-bk">
+  <div class="home-clear"></div>
+  <div class="homeSet">
+	 <div  ng-if="vm.custId!=''"><b>{{vm.custId}}</b>-<b>{{vm.custName}}</b></div>
+	 <div ng-if="vm.custId==''"><div style="display: inline-block;"><b>No Customer Selected</b></div>
+	 </div></div>
+
+	</div>
+    <div class="home-box" >
+	 
+	 <ul class="bottom-bx">
+	  <li ng-repeat="menu in vm.per"><a ui-sref="{{menu.AccessName}}"><input class="btn btn-default" type="submit" value="{{menu.Description}}"></a></li>
+
+	  <li ng-repeat="otherMenu in vm.otherPer" ng-class="{'indexEvent':online==false}" class="border-left"  ><a href="{{otherMenu.PageURL}}" target="_blank"><input class="btn btn-default" type="submit" value="{{otherMenu.Description}}"></a></li>
+	  
+	 </ul><!--bottom-bx-->
+	 
+	 
+	</div><!--home-box--><br/>
+   </section>
+</div>
+
+
+  <ng-include src="headerUrl"></ng-include>

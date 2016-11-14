@@ -1,0 +1,36 @@
+<div class="modal fade cartModal" role="dialog"  data-backdrop="static">
+  <div class="modal-dialog" style="z-index:9999999">
+      <div class="modal-content">
+
+          <div class="modal-header">  
+              <div class="pop-up-wind-ing"><img src="images/iconb.jpg"/></div>
+
+              <div class="pop-up-wind-txt">
+              <div><span>{{cart.ProductCode}}</span></div>
+              <div><span>{{cart.Name}}</span></div>
+              </div> 
+
+          </div>
+
+          <div class="modal-body padd-remove">
+              <h4 style=" text-align: center; margin-bottom:4px;"><span class="quent-txt">Qty: </span>
+
+                <button id="minus" class="minus-btn1" ng-disabled="quantity==1">-</button>
+
+                <input type="text" ng-model="quantity" class="num-bx"/>
+
+                <button id="plus" class="plus-btn1 ">+</button></h4>
+
+          </div>
+
+          <div class="modal-footer ftr-align">
+              
+              <button class="orangeBtn add-crt-btn1"  ng-click="addToCart()" >Add To Cart</button>
+              <button class="orangeBtn close-crt-btn1"  data-dismiss="modal" >Close</button>
+          </div>
+
+
+      </div>
+  </div>
+</div>
+

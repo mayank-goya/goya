@@ -1,0 +1,550 @@
+
+
+           
+
+
+<div hide-toggle class="printt">
+    <section>
+        <!-- breadcrumbs-links start -->
+        <div class="col-md-12 breadcrumbs-links ">
+            <div class="container">
+                <ol class="breadcrumb br-quk    bd-color">
+                    <a ui-sref="home" class="color2">Home</a>&gt;
+                    <a ui-sref="searchorderentry" class="color2">Order History</a>
+                </ol>
+            </div>
+            <!-- container -->
+        </div>
+        <!-- breadcrumbs-links end -->
+    </section>
+    <section>
+        <div menu-toggle class="mobile-tab-bar">
+            <div class="container">
+                <!--search-order-form start -->
+                <div class="col-md-12 search-order-form clear-site-1 srch-bar desk-space mob-clr">
+                    <div class="col-xs-6 col-sm-6 col-md-6 form-heading mob-clr">
+                        <div class="col-sm-12 ">
+                            <h2>Order History</h2>
+                        </div>
+                    </div>
+
+                    <script>
+                    </script>
+
+                    <!--form-heading -->
+                    <div class="col-xs-6 col-sm-6 col-md-6 order-form-tab mob-clr">
+                        <div class="order-tab1">
+                            <!--tab1-->
+                            <nav class='navbar  navbar-fixed-top'>
+                                <button type='button' class='navbar-toggle click-mb' ng-click="handleClick2()" } id="menu-toggle2">
+                <span class='sr-only'>Toggle navigation</span>
+                <img src="images/icon1.png">
+                </button>
+                                <div id="wrapper2" class="wrapper2">
+                                    <div id="sidebar-wrapper2">
+                                        <div id="sidebar-wrapper2">
+
+                                            <div class="close-tab">
+                                                <button type='button' class='navbar-toggle mob-clk1' ng-click="handleClick2()">
+                        <span class='sr-only'>Toggle navigation</span>
+                        <img src="images/tab-close.png">
+                        </button>
+                                            </div>
+                                            <!--close-tab-->
+                                            <div id="wrapper2-top">
+                                                <img src="images/sort-icon.jpg">&nbsp; Filter
+                                            </div>
+                                            <!--wrapper1-top-->
+                                            <div id="wrapper2-top-form">
+                                                <form>
+                                                    <div class="form-group form-posn">
+                                                        <label for="exampleInputEmail1">Order Date</label>
+                                                         <input datepicker ng-model="vm.fromNewDate" type="text" class="datepicker mmm form-control "  >
+                                                    
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="exampleInputPassword1">Customer Name</label>
+                                                        <input type="text" class="form-control " ng-model="vm.custMobName" placeholder="Coustmer Name">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="exampleInputPassword1">Delivery Date</label>
+                                                        <select class="form-control">
+                                                      <option>1</option>
+                                                      <option>2</option>
+                                                      <option>3</option>
+                                                      <option>4</option>
+                                                      <option>5</option>
+                                                    </select>
+                                                    </div>
+                                                    <button  class="btn btn-default btn-search" ng-click="vm.sortData(vm.fromNewDate,vm.custMobName);">SORT</button>
+                                                </form>
+                                            </div>
+                                            <!--wrapper1-top-form-->
+                                        </div>
+                                        <div id="page-content-wrapper2">
+                                        </div>
+                                    </div>
+                                    <div class="orig_logo">
+                                        <a class='navbar-brand text-hide' id="orig_logo" href='/' onClick={Link.newhandleClick}>SmartMoney</a>
+                                    </div>
+                            </nav>
+                            </div>
+                            <!--tab1-->
+                            <div class="order-tab2">
+                                <!--tab1-->
+                                <nav class='navbar  navbar-fixed-top'>
+                                    <button type='button' class='navbar-toggle menu-mob1 hide-clk-tab' ng-click="handleClick3()" id="menu-toggle1">
+                  <span class='sr-only'>Toggle navigation</span>
+                  <img src="images/icon2.png">
+                  </button>
+                                    <div id="wrapper1" class="wrapper3">
+                                        <div id="sidebar-wrapper1">
+
+                                            <div class="close-tab">
+                                                <button type='button' class='navbar-toggle' ng-click="handleClick3()">
+                        <span class='sr-only'>Toggle navigation</span>
+                        <img src="images/tab-close.png">
+                        </button>
+                                            </div>
+<style type="text/css">
+@media only screen and (max-width: 768px) and (min-width: 230px){
+.ac-select-wrapper, .ac-select-wrapper input, .ac-select-wrapper select {
+font-size: 12px;
+background-color: rgb(238, 238, 238);
+width:100% !important;
+float: left;
+}
+
+td.ac-select-image {
+    position: absolute;
+    right: 9px;
+    top: 2px;
+}
+}
+
+@media only screen and (max-width: 992px) and (min-width: 768px){
+.ac-select-wrapper, .ac-select-wrapper input, .ac-select-wrapper select {
+    font-size: 12px;
+    background-color: white;
+    width: 100% !important;
+    float: left;
+}
+}
+  
+  @media only screen and (max-width: 2000px) and (min-width:1040px){
+.ac-select-wrapper, .ac-select-wrapper input, .ac-select-wrapper select {
+font-size: 12px;
+background-color: rgb(238, 238, 238);
+width:68% !important;
+float: left;
+}
+}                     
+ </style>                                           <!--close-tab-->
+                                            <div id="wrapper1-top">
+                                                <img src="images/icon2.png">&nbsp; Filter
+                                            </div>
+                                            <!--wrapper1-top-->
+                                            <div id="wrapper1-top-form">
+                                                <form>
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1">Order#</label>
+                                                        <input type="text" class="form-control" ng-model="vm.setNumber" ng-change="vm.setOrderNumber(vm.setNumber,'m')" placeholder="Order No">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="exampleInputPassword1">Select Customer</label>
+                                                        <ac-select class="form-control " ac-model='vm.custSelected' ac-options='cust as cust.Name for cust in vm.constumerDetails()'
+    ac-change="vm.setCustId(value,'m')" ac-settings="{  minWidth: '100px' }"> <option class="col-sm-2"  value="" selected>All</option></ac-select>
+
+
+                                                       <!--  <select class="form-control" ng-options="cust as cust.Name for cust in vm.custData" ng-model="vm.custSelected" ng-change="vm.setCustId(vm.custSelected,'m')">
+                                                           <option class="col-sm-2"  value="" selected>All</option>
+                                                        </select> -->
+                                                    </div>
+                                                    <div class="from-group">
+                <label for="exampleInputName2">Broker</label>
+                        <select class="form-control account-field" ng-model="vm.AdminBrokerList" 
+                                placeholder="Select Broker"
+                                ng-change="vm.setFilterOrder('m')">
+                             <option value="" ng-selected="true">All</option>
+                             <option ng-repeat="Broker in vm.AdminBrokerList1"
+                                   value="{{Broker.UserID}}" 
+                                   ng-selected="vm.SelectedBrokerValue==Broker.UserID">
+
+                                   {{Broker.UserID +"--"+Broker.Name}}
+                           </option>
+                        
+                        </select>
+
+                                                    </div>
+
+
+                                                    <div class="form-group">
+                                                        <label for="exampleInputPassword1">Order Status</label>
+                                                        <select class="form-control" ng-options="stat as stat.OrderStatusName for stat in vm.orderStatus track by stat.OrderStatusName" ng-model="vm.Selected" ng-change="vm.setStatus(vm.Selected,'m')">
+                                                             <option value="" selected>All</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="exampleInputPassword1">Order Type</label>
+                                                    <select class="form-control order_w" ng-model="vm.dropSelected" ng-options="drop as drop.Name for drop in vm.dropPick" ng-change="vm.pickDropMob(vm.dropSelected)"></select>
+                                                    </div>
+                                                    <div class="form-group form-posn">
+                                                        <label for="exampleInputPassword1">From Date</label>
+                                                         <input datemfrom-picker ng-model="vm.showFromDate" type="text" class="datepicker4 mmm form-control " ng-change="vm.setFromDate(vm.showFromDate,'m')" disabled>
+                                                    </div>
+                                                    <div class="form-group form-posn">
+                                                        <label for="exampleInputPassword1">To Date</label>
+                                                        <input datemto-picker ng-model="vm.showToDate" type="text"  class="mmm2 form-control datepicker3" ng-change="vm.setToDate(vm.showToDate,'m')" disabled>
+                                                    </div>
+                                                    <label for="exampleInputPassword1">To Date</label>
+                                                    <button title="Display last  7 Days Orders" type="submit" class="btn btn-default record-btn tog-hovr" ng-class="{'btn-hover':vm.firstDate ==true}"  ng-click="vm.daysFilter(7,'m')">7 days</button>
+                                                    <button title="Display last 15 Days Orders" type="submit" ng-class="{'tog-hovr1':vm.setClass ==15}" class="btn btn-default record-btn tog-hovr" ng-click="vm.daysFilter(15,'m')">15 days</button>
+                                                    <button title="Display last 30 Days Orders" type="submit" ng-class="{'tog-hovr1':vm.setClass ==30}" class="btn btn-default record-btn tog-hovr" ng-click="vm.daysFilter(30,'m')">30 days</button>
+                                                    <button title="Display last 45 Days Orders" type="submit" ng-class="{'tog-hovr1':vm.setClass ==45}" class="btn btn-default record-btn tog-hovr" ng-click="vm.daysFilter(45,'m')">45 days</button>
+                                                    <button title="Display last 60 Days Orders" type="submit" ng-class="{'tog-hovr1':vm.setClass ==60}" class="btn btn-default record-btn tog-hovr" ng-click="vm.daysFilter(60,'m')">60 days</button>
+                                                    <button type="submit" class="btn btn-default record-btn5 " title="Reset all the filters" ng-click="vm.reset('m');handleClick1()">Reset</button>
+                                                
+                                                    <button type="submit" class="btn btn-default btn-search " ng-click="vm.setFilterOrder('m');handleClick1()">SEARCH</button>
+                                                    
+                                                </form>
+                                            </div>
+                                            <!--wrapper1-top-form-->
+                                        </div>
+                                        <div id="page-content-wrapper1">
+                                        </div>
+                                    </div>
+                                    <div class="orig_logo">
+                                        <a class='navbar-brand text-hide' id="orig_logo" href='/' onClick={Link.newhandleClick}>SmartMoney</a>
+                                    </div>
+                                </nav>
+                            </div>
+                            <!--form-tab -->
+                        </div>
+                        <!--search-order-form end -->
+                    </div>
+                </div>
+            </div>
+            <!--tab1-->
+ 
+     <!--       <div class="mobile-selected-bar">
+                <div class="container">
+                  
+                    <div class="col-md-12 clear-site-1">
+                        <div class="col-xs-6 col-sm-6 col-md-6 delete-dtl-mob">
+                            <b class="today">Today , 22nd February 2016</b>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div> -->
+            <!--container -->
+    </section>
+
+    <section class="space-div-nw1">
+        <div class="container">
+            <!--order-entry-form start -->
+            <div class="col-md-12 order-entry-form" id="order-br1">
+                 <div class="date-error-ms" ng-if="vm.setValid == false">Invalid To Date</div>
+                  <div class="date-error-ms"  ng-if="vm.setFromValid == false">Invalid From Date</div>
+                <form class="form-inline">
+                    <div class="col-xs-4  col-lg-4 ">
+                        <label for="exampleInputName2">Customer</label>
+                       <!--  <select class="form-control order_w"  ng-options="cust as cust.Name for cust in vm.custData" ng-model="vm.custSelected" ng-change="vm.setCustId(vm.custSelected)"> </select> -->
+                       <ac-select  ac-model='vm.custSelected' ac-options='cust as cust.Name for cust in vm.constumerDetails()'
+    ac-change="vm.setCustId(value)"> <option class="col-sm-2"  value="" selected>All</option></ac-select>
+                          
+              
+                    </div>
+                    <div class="col-xs-4 col-lg-4 ">
+                        <label for="exampleInputName2">EOR#</label>
+                      <input type="text" class="form-control input-filds" id="exampleInputName2" placeholder="" ng-model="vm.setNumber" ng-change="vm.setOrderNumber(vm.setNumber)">
+                    </div>
+                    <div class="col-xs-4 col-lg-4 ">
+                        <label for="exampleInputName2">Status</label>
+                        <select class="form-control order_w"  ng-options="stat as stat.OrderStatusName for stat in vm.orderStatus track by stat.OrderStatusName" ng-model="vm.Selected" ng-change="vm.setStatus(vm.Selected)">
+                            <option value="" selected>All</option>
+              </select>
+                    </div>
+                    <div class="col-xs-12 col-lg-12 ">&nbsp; </div>
+                    <div class="col-xs-4 col-lg-4 ">
+                        <label for="exampleInputName2">From Date</label>
+                        <div class="datetimepicker1">
+                            <input datefrom-picker ng-model="vm.showFromDate" type="text" class="datepicker1 mmm form-control " ng-change="vm.setFromDate(vm.showFromDate,'n')" >
+                            
+                        </div>
+                      <!--  <script type="text/javascript">
+                            $(function() {
+                                $('.datetimepicker1').datetimepicker({
+                                    language: 'pt-BR'
+                                });
+                            });
+                        </script>-->
+                    </div>
+
+                    <div class="col-xs-4 col-lg-4 ">
+
+                        <label for="exampleInputName2">To Date</label>
+                        <div class="datetimepicker1">
+                            <input dateto-picker ng-model="vm.showToDate" type="text"  class="mmm2 form-control datepicker" ng-change="vm.setToDate(vm.showToDate,'n')">
+                            
+                        </div>
+                    </div>
+                    
+                     <div class="col-xs-4 col-lg-4 ">
+                        <label for="exampleInputName2">Order Type</label>
+                        <select class="form-control order_w" ng-model="vm.dropSelected" ng-options="drop as drop.Name for drop in vm.dropPick" ng-change="vm.pickDrop(vm.dropSelected)">
+                         </select>
+                    </div>
+                    
+                  
+                    <div class="col-xs-12 col-lg-12 clear20 ">&nbsp; </div>
+                    <div class="row">
+                <div ng-show="vm.BrokerManager" class="col-xs-4 col-lg-4 " style="padding-left: 31px;">
+                        <label for="exampleInputName2">Broker</label>
+                        <select class="form-control account-field" ng-model="vm.AdminBrokerList" 
+                                placeholder="Select Broker"
+                                ng-change="vm.setFilterOrder('d')">
+                             <option value="" ng-selected="true">All</option>
+                             <option ng-repeat="Broker in vm.AdminBrokerList1"
+                                   value="{{Broker.UserID}}" 
+                                   ng-selected="vm.SelectedBrokerValue==Broker.UserID">
+
+                                   {{Broker.UserID +"--"+Broker.Name}}
+                           </option>
+                        
+                        </select>
+
+
+                </div>
+                      <div class="col-xs-3 col-lg-3" style="width:16%;">
+                        <div class="col-lg-4 clear-site-1 ">
+                            <button title="Delete Pending Order" ng-disabled="!vm.delOnew.length" type="submit" class="add-on search_butt search_butt_nn bu1" title="Delete Pending Order" ng-click="vm.delteOrder()"> DELETE </button>
+                        </div>
+                        <div class="col-lg-4 left-space clear-site-1 ">
+                            <button title="Reset all the filters" type="submit" class="add-on search_butt search_butt_nn" ng-click="vm.reset()"> RESET</button>
+                        </div>
+                    </div>
+                    
+                        
+                        <div class="col-xs-9 col-lg-9 " style="float:right; width:45%;">
+                        <div class="col-lg-2 clear-site-1">
+                            <label for="exampleInputName2">&nbsp;  &nbsp; Past Records</label>
+                        </div>
+                            <div class="col-xs-2 col-lg-2 clear-site3">
+                                <button type="submit" title="Display last  7 Days Orders" ng-class="{'btn-hover':vm.firstDate ==true}" ng-click="vm.daysFilter(7)" class="btn btn-default record-btn fivbut" >7 days</button>
+                            </div>
+                            <div class="col-xs-2 col-lg-2 clear-site3">
+                                <button title="Display last 15 Days Orders" type="submit" ng-click="vm.daysFilter(15)" class="btn btn-default record-btn fivbut">15 days</button>
+                            </div>
+                            <div class="col-xs-2 col-lg-2 clear-site3">
+                                <button title="Display last 30 Days Orders" type="submit" ng-click="vm.daysFilter(30)" class="btn btn-default record-btn fivbut">30 days</button>
+                            </div>
+                            <div class="col-xs-2 col-lg-2 clear-site3">
+                                <button title="Display last 45 Days Orders" type="submit" ng-click="vm.daysFilter(45)" class="btn btn-default record-btn fivbut">45 days</button>
+                            </div>
+                            <div class="col-xs-2 col-lg-2 clear-site3">
+                                <button title="Display last 60 Days Orders" type="submit" ng-click="vm.daysFilter(60)" class="btn btn-default record-btn fivbut">60 days</button>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!--order-entry-form end-->
+        </div>
+        <!--container -->
+    </section>
+    <section>
+        <div class="container print_r">
+            <!--table-record-info start -->
+             <div class="col-md-12 table-record-info clear-site-1 cart-fxt ">
+                <table class="table ">
+                    <thead>
+                        <tr class="head-fixed">
+                            <th class="new-th" style="width:5%"><!-- <input type="checkbox" ng-model="vm.Allcheck" ng-click="vm.checkAll();"> --></th>
+                            <th style="width: 10%;" class="col-xs-1 new-th">#EOR</th>
+                              <th  class="col-xs-1 new-th">#Customer</th> 
+                             <th class="col-xs-1 new-th">Order No</th>
+                             <th class="col-xs-1 new-th">Amount Collected</th>
+                            <th class="col-xs-1 new-th">Order-Date </th>
+                            <th class="col-xs-2 new-th">Name</th>
+                            <th style="width: 1%;" class="col-xs-1  new-th new-ad">Cases</th>
+                             <th style="width: 8.1%;" class="col-xs-1 new-th">Units</th>
+                            <th class="col-xs-1 new-th">Pickup</th>
+                            <th class="col-xs-1 new-th">Status</th>
+                          
+                            <th  style="width: 0.6%;" class="col-xs-1 new-th">Edit</th>
+                            <th class="col-xs-1 new-th">Delete</th>
+                            <th class="col-xs-1 new-th">Copy</th>
+                            <th class="col-xs-1 new-th">Cash Mgt</th>
+                        </tr>
+                    </thead>
+                    <tr><td  height="35"></td><tr>
+                     <tr><td class="mb-bx"></td><tr>
+                    <tbody>
+                        <tr ng-if="!vm.orderHistoryData.length"><td class="nodata-info1">No Order Found</td></tr>
+                        <tr class="tr-mob1" id="w{{orderData.PONumber}}" ng-class="{pickOrder:orderData.Pickup == 'true','delSetId':orderData.setDelId==true}" ng-repeat="orderData in vm.orderHistoryData | pagination : vm.currentPage* vm.itemsPerPage  | limitTo: vm.itemsPerPage ">
+                            <td class="new-th" style="width: 5%;" ><input type="checkbox" ng-model="orderData.checks" ng-disabled="orderData.StatusText=='Submitted'" ng-click="vm.checkOne(orderData.checks,$index,orderData)"></td>
+                            <td   style="width: 10%;" class="eor-info" ng-click="vm.showOrderDetails(orderData,orderData.StatusText)">#{{orderData.PONumber}}</td>
+                            <td  class="col-xs-1 eor-info">{{orderData.CustomerID}}</td> 
+                            <td  class="col-xs-1 eor-info">{{orderData.OrderNo}}</td>
+                            <td  class="col-xs-1 eor-info" ng-click="vm.showOrderDetails(orderData,orderData.StatusText)">{{orderData.AmountCollected}}</td>
+                            <td class="col-xs-1 font-size1">{{orderData.OrderDate}}</td>
+                            <td class="col-xs-2 cname-info font-size1">{{orderData.CustomerName}}</td>
+                            <td class="col-xs-1 font-size2" >{{orderData.OrderQuantity}}</td>
+                             <td class="col-xs-1 font-size2">{{orderData.OrdUnits}}</td>
+                            <td class="col-xs-1">{{vm.checkPick(orderData.Pickup)}}</td>
+                            <td class="col-xs-1 font-size3">{{orderData.StatusText}}</td>
+                             <td class="col-xs-1" ng-if="orderData.StatusText!='Open'" ></td>
+                            <td class="col-xs-1" ng-if="orderData.StatusText!='Open'" ></td>
+                                                      
+                           <td style="width:8.3%;" class="edit-icon "  ng-class="{'disable':orderData.StatusText=='Submitted','enable':orderData.StatusText=='Open'}" ng-if="orderData.StatusText =='Open'" >
+                                <a class="hover-wd col-xs-1" ng-href="#/order-entry-addinfo?EOR={{orderData.PONumber}}&custID={{orderData.CustomerID}}&custNameEdit={{orderData.CustomerName}}">&nbsp;</a>
+                            </td>
+                            <td style="width:8.3%;" class="delete-icon"  ng-class="{'disable':orderData.StatusText=='Submitted','enable':orderData.StatusText=='Open'}" ng-click="vm.deleteOrder(orderData.PONumber,orderData.BasketID,$index)" ng-if="orderData.StatusText =='Open'"></td>
+                            <td class="col-xs-1" ng-if="orderData.StatusText=='Open'" ></td>
+                            <td class="col-xs-1" ng-if="orderData.StatusText=='Open'" ></td>
+                             <td class="order-icon" ng-if="orderData.StatusText!='Open'" >
+                                  <a class=" col-xs-1"    
+                                ng-href="#/order-entry-addinfo?bID={{orderData.BasketID}}&custID={{orderData.CustomerID}}&isPickup={{orderData.Pickup}}&custNameCopy={{orderData.CustomerName}}">&nbsp;</a>
+                            </td>
+                            <td class="cash-icon col-xs-1" ng-if="orderData.StatusText!='Open'"></td>
+                            
+                        </tr>
+                        
+                    </tbody>
+                </table>
+                <nav>
+           <div class="pagination-dtl" ng-if="vm.orderHistoryData.length">
+                  <ul class="pagination pagination-sm paginationlist">
+                    <li class="page-item" ng-class="vm.DisablePrevPage()">
+                      <a  ng-click="vm.prevPage()" style="color: #323232!important;"> Prev</a>
+                    </li>
+                     <li ng-repeat="n in vm.range()" ng-class="{active: n == currentPage}" ng-click="vm.setPage(n)">
+                      <a  style="color: #7f7f7f!important;">{{n+1}}</a>
+                    </li>
+                    <li ng-class="vm.DisableNextPage()">
+                      <a  ng-click="vm.nextPage()" style="color: #323232!important;">Next </a>
+                       
+                    </li>
+                  </ul>           
+          </div>
+          </nav>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+            <!--table-record-info end-->
+            <div class="row print_r">
+                <!-- mobile view start -->
+                <div class="container container_nn">
+                 <span class="order-dlt-lft  slecDel1" ng-if="vm.DelSUcc">Order Deleted Succussfully!
+
+                <img src="images/cross-solid.png" class="cnl-icon" ng-click="vm.DelSUcc = false;">
+                 </span>
+                    <div ng-if="vm.delteMob.length" class="col-xs-12 col-sm-12 col-md-12 slecDel lrn">
+                        <div class="order-dlt col-xs-12">
+
+                            <span class="order-dlt-lft">Selected Orders: {{vm.delteMob.length}}</span>
+
+                           
+                         <span class="chColor order-dlt-rgt1 " ng-click="vm.bulkDeleteOrderMob()" >Delete</span>
+
+
+                          <span class="order-dlt-rgt2 " style="cursor:pointer" class="chColor" ng-click="vm.cancel()">Cancel</span></div>
+
+                    </div>
+                    <div ng-if="!vm.finalData.length" class="nodata-info">No Order Found</div>
+                    <div class="col-xs-12 col-sm-12 col-md-12  mobile-order-entry-record"  ng-repeat="mobData in vm.finalData">
+              
+                    <!-- container -->
+                    <div class="col-xs-12 col-sm-12 col-md-12 timee">
+                        <p>{{mobData.displayDate}}</p>
+                    </div>
+                    
+                    <div class="col-xs-12 col-sm-12 col-md-12  mobile-order-entry-record" ng-class="{'pickOrder':viewData.Pickup == 'true','delSetId':viewData.setDelId==true}" ios-dblclick="vm.deleteItemMob(viewData,$index)" id="m{{viewData.PONumber}}" ng-repeat="viewData in mobData.data">
+                        <div ng-show="!viewData.checks" class="col-xs-12 col-sm-12 col-md-12 col-record clear-site-1" ng-swipe-left="vm.swipe(viewData,$index);">
+                            <div  class="col-xs-8 col-sm-8 col-md-10 mobile-table-left clear-site-1" >
+                                <div class="items-num" ng-click="vm.showOrderDetails(viewData)"><b class="number">{{viewData.OrderQuantity}}<br/><span ng-if="viewData.Pickup!='true'" style="width:100% !important">Cases</span></b><b ng-if="viewData.Pickup=='true'" class="pick-bdr">{{viewData.OrdUnits}}</b></div>
+                                <!--items-num-->
+                                <span class="item-desc" ng-class="{'delcol':viewData.setDelId==true}">{{viewData.PONumber}}</span><br/>
+                                 <span class="item-desc" ng-class="{'delcol':viewData.setDelId==true}">#{{viewData.CustomerID}}</span>
+                                <span ng-class="{'item-name':viewData.StatusText== 'Submitted','delcol':viewData.setDelId==true}">{{viewData.CustomerName}} </span>
+                                 <span ng-class="{'item-name':viewData.StatusText== 'Submitted','delcol':viewData.setDelId==true}" style="padding-left: 75px;width:100% !important" >Order# {{viewData.OrderNo}} </span>
+                               <span style="padding-left: 75px;" ng-class="{'item-name':viewData.StatusText== 'Submitted','delcol':viewData.setDelId==true}" >{{viewData.AmountCollected}} </span>
+                               
+                            </div>
+
+                            <!-- mobile-table-left -->
+                            <div class="col-xs-4 col-sm-4 col-md-2 mobile-table-right clear-site-1">
+                                <input type="submit" style="width:97px !important" ng-if="viewData.StatusText== 'Submitted'" class="submitted ttab" value="Submitted" />
+                                <input type="submit" style="width:97px !important" ng-if="viewData.StatusText== 'Submitted'" class="submitted mobb" value="S" />
+                                <input type="submit" style="width:97px !important" class="sub-cust1" ng-if="viewData.StatusText== 'Open'" value="Submit" ng-click="vm.submitOrder(viewData.PONumber,viewData.Pickup)"/>
+                                <input type="submit" title="{{viewData.StatusText}}" class="submitted_2" value="{{viewData.StatusText}}">
+                               <!-- <input type="submit"  class="submitted_2 ttab" value="{{viewData.StatusText}}"> -->
+                               
+                            </div>
+                            <!-- mobile-table-left -->
+                        </div>
+                        <div class=" col-xs-12" style="height:auto;background-color:#01459a;min-height:100px;padding-bottom:8px;" ng-show="viewData.checks" ng-swipe-right="viewData.checks = false">
+                        
+                            <div  class="col-xs-8  mobile-table-left clear-site-1" >
+                                <div class="items-num" ng-click="vm.showOrderDetails(viewData)"><b class="number">{{viewData.OrderQuantity}}<br/><span ng-if="viewData.Pickup!='true'" style="width:100% !important">Cases</span></b><b ng-if="viewData.Pickup=='true'" class="pick-bdr">{{viewData.OrdUnits}}</b></div>
+                                <!--items-num-->
+                                <span class="item-desc colorText" ng-class="{'delcol':viewData.setDelId==true}">{{viewData.PONumber1}}</span><br/>
+                                 <span class="item-desc colorText" ng-class="{'delcol':viewData.setDelId==true}">#{{viewData.CustomerID}}</span>
+                                <span ng-class="{'item-name':viewData.StatusText== 'Submitted','delcol':viewData.setDelId==true}" class="colorText">{{viewData.CustomerName}} </span>
+                               <span ng-class="{'item-name':viewData.StatusText== 'Submitted','delcol':viewData.setDelId==true}" class="colorText">{{viewData.OrderNo}} </span>
+                               <span ng-class="{'item-name':viewData.StatusText== 'Submitted','delcol':viewData.setDelId==true}" style="width: 147px !important;float: right;" class="colorText">{{viewData.AmountCollected}} </span>
+                            </div>
+                            <div class="col-xs-2 tab-delete-icon" ng-class="{'disable':viewData.StatusText=='Submitted','enable':viewData.StatusText=='Open'}" ng-click="vm.deleteOrder(viewData.PONumber,viewData.BasketID,$index,'m')" ng-if="viewData.StatusText=='Open'"></div>
+                           
+                                   <a ng-href="#/order-entry-addinfo?EOR={{viewData.PONumber}}&custID={{viewData.CustomerID}}&custNameEdit={{viewData.CustomerName}}">
+                                        <div class=" col-xs-2 tab-order-icon" ng-class="{'disable':viewData.StatusText=='Submitted','enable':viewData.StatusText=='Open'}" ng-if="viewData.StatusText=='Open'"  >
+                                       </div>  
+                                   </a>
+
+                          
+                            <div class="col-xs-2 tab-cash-icon" ng-if="viewData.StatusText!='Open'"></div>
+                             
+                               <a class="order-icon col-xs-1"  ng-if="viewData.StatusText!='Open'"  
+                                ng-href="#/order-entry-addinfo?bID={{viewData.BasketID}}&custID={{viewData.CustomerID}}&isPickup={{viewData.Pickup}}&custNameCopy={{viewData.CustomerName}}">
+                              <div class="col-xs-2 tab-copy-icon" ng-if="viewData.StatusText!='Open'"></div>
+                              </a>
+                        </div>
+                        <!-- col-record -->
+                  
+                            <!-- mobile-table-left -->
+                        </div>
+                        <!-- col-record -->
+
+
+
+
+                    </div>
+
+                </div>
+                  <div class="mob-fxclear2"></div>
+                <!-- mobile view end -->
+            </div>
+            <!--container -->
+            <section>
+
+        </div>
+    </section>
+<error-modal delete-order="vm.confirmDeleteOrder()"></error-modal>
+<bulk-modal delete-order="vm.bulkDeleteOrder()" delete-mob="vm.confirmDelMob()" reset-bulk="vm.bulkReset()" mob-check="vm.mob" can-mob="vm.cancel()"></bulk-modal>
+
+</div>
+<customer-info mob-details="vm.mobViewDetail"></customer-info>
+
+ <ng-include src="headerUrl"></ng-include>

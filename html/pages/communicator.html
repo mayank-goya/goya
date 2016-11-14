@@ -1,0 +1,368 @@
+<div hide-toggle position-click>
+<section>
+      <!-- breadcrumbs-links start --> 
+      <div class="col-md-12 breadcrumbs-links">
+        <div class="container">
+          <ol class="breadcrumb br-quk    bd-color">
+            <a ui-sref="home" class="color2">Home</a>/
+            <a ui-sref="salescommunicator" class="color2"> Sales Communicator</a>
+          </ol>
+        </div>
+        <!-- container -->
+      </div>
+      <!-- breadcrumbs-links end -->
+    </section>
+    <section>
+      <div class="col-md-12 customer-details-bar clear-site-1">
+        <!-- Customer-details-bar end -->
+        <div class="container">
+          <div class="col-md-12 details-heading clear-site-1">
+            <p class="col-md-6 col-md-6 sale-com">Sales Communicator</p>
+
+   <div class="col-md-6 col-md-6" style="text-align: right;padding-right: 150px;"> 
+   <button class="  neww-fld btn-links action-a1" ng-click="vm.activateUploadSection()" type="submit">Create</button> 
+   </div> 
+   
+          </div>
+          <!-- details-heading end -->
+         
+          <!-- details-heading end -->
+        </div>
+        <!-- container end --> 
+      </div>
+      <!-- Customer-details-bar end --> 
+
+  <div class="container">
+<div class="col-md-12 search-bx1" >
+<div class="bk-fixed">
+
+
+<!--<input type="text" class="form-control search-cust ng-pristine ng-untouched ng-valid" ng-model="datalists" placeholder="Search Customer">-->
+
+<!-- <img src="images/search-cust-icon.png" class="search-cust-icon">
+<img src="images/cust-close-icon.png" class="close-cust-icon"> -->
+</div>
+
+</div>
+</div>
+
+ <div class="container" id="quick-full-tab">
+     
+   
+     <!-- upload section start -->
+  <div class="col-md-12 order-entry-form1" ng-if="vm.showUploadSection==true" id="order-br1">
+
+  <div style="clear:both;margin:0 auto;height:0px;"></div>
+  <div class="date-error-ms" ng-if="vm.setValid == false">Invalid To Date</div>
+  <div class="date-error-ms"  ng-if="vm.setFromValid == false">Invalid From Date</div>
+      <form class="form-inline creatfld" ng-submit="vm.addSalesCommunicatorData(vm.communicatorData)">
+
+  <div class="col-xs-4 col-lg-4 ">
+          <label class="orderleft" for="exampleInputName2">From Date</label>
+          <div class="datetimepicker1">
+              <input datefrom-picker ng-model="vm.communicatorData.showToDate" type="text" class="datepicker1 mmm form-control orderright" ng-change="vm.setToDate(vm.communicatorData.showToDate)" required/>
+              
+          </div>
+            </div>
+
+            <div class="col-xs-4 col-lg-4 ">
+
+                <label class="orderleft" for="exampleInputName2">To Date</label>
+                <div class="datetimepicker1">
+                    <input dateto-picker ng-model="vm.communicatorData.showFromDate" type="text"  class="mmm2 form-control datepicker orderright" ng-change="vm.setFromDate()" required/>
+                    
+                </div>
+            </div>
+                    
+         <div class="col-xs-4 col-lg-4 ">
+            <label class="orderleft"  for="exampleInputName2">Week #</label>
+          <span>{{vm.communicatorData.weeks || '-'}}</span>
+          <input type="hidden" name="weeks" ng-model="vm.communicatorData.weeks"/>
+        </div>
+
+
+<div class="col-xs-12 col-lg-12 " style="height: 15px;">&nbsp; </div>
+    
+
+
+
+
+          <div class="col-xs-4  col-lg-4 ">
+          <label class="orderleft" ng-if="vm.isEditable == false" for="exampleInputName2">Upload PDF File</label>
+           <input type="file" ng-if="vm.isEditable == false"  ng-model="vm.communicatorData.uploadFiles" class=" neww-fld btn-links fileupload1" id="uploads" ng-model-instant onchange="angular.element(this).scope().uploadFile(event)" value="Select PDF File" required/>
+            <label class="orderleft" for="exampleInputName2" ng-if="vm.isEditable == true">File Name</label>
+              <label  for="exampleInputName2" class="newlab" ng-if="vm.isEditable == true" >{{vm.communicatorData.uploadFiles}}</label>
+             <!--  <select class="form-control order_w"  ng-options="cust as cust.Name for cust in vm.custData" ng-model="vm.custSelected" ng-change="vm.setCustId(vm.custSelected)"> </select> -->
+       
+                
+          </div>
+
+          <div class="col-xs-4 col-lg-4 ">
+              <label class="orderleft" for="exampleInputName2"></label>
+            <input type="text" class="form-control input-filds orderright" id="exampleInputName2" placeholder="Enter Comments" ng-model="vm.communicatorData.comment" required/>
+          </div>
+
+        <div class="col-xs-4 col-lg-4 ">
+            <label class="orderleft" for="exampleInputName2">Status</label>
+            <select class="form-control order_w orderright" name="status" ng-options=" status.option for status in vm.status" ng-model="vm.communicatorData.Selected" required>
+           </select>
+        </div>
+
+
+
+
+
+<div class="col-xs-12 col-lg-12 " style="height: 1px;">&nbsp; </div>
+
+   <div class="col-xs-4  col-lg-4 ">
+        <label class="orderleft" for="exampleInputName2">Document Type</label>
+            <select class="form-control order_w orderright" name="status" ng-options=" status.option for status in vm.status" ng-model="vm.communicatorData.Selected" required>
+           </select>
+       
+                
+          </div>
+
+          <div class="col-xs-4 col-lg-4 ">
+              
+          </div>
+
+        <div class="col-xs-4 col-lg-4 ">
+           
+        </div>
+
+<div class="col-xs-12 col-lg-12 " style="height: 1px;">&nbsp; </div>
+      
+      <div class="row">
+      <div class="col-md-12" style="text-align:center"> 
+       <button class="btn  neww-fld btn-links" type="submit" ng-if="vm.isEditable == false">Save</button> 
+       <button class="btn  neww-fld btn-links" type="submit" ng-if="vm.isEditable == true">Edit</button>
+       <button class="btn  neww-fld btn-links" ng-click="vm.closeUploadSection()" type="submit">Close</button>  
+   </div>
+                                       
+    </div>
+    </form>
+ </div><!--upload section end-->
+
+   <div class="col-md-12 customer-details-record cust-detl clear-site-1" ng-class="{'custtoprecord1':vm.showUploadSection == false,'custtoprecord2':vm.showUploadSection == true}">
+
+<div class="main-search">
+
+<div class="form-inline newinline " >
+  <div class="form-group newinliner">
+    <label for="exampleInputName2" class="label-inline1">Week No.</label>
+    <input type="text" class="form-control" ng-model="salesdatalistsM" id="exampleInputName2" placeholder="Weeks">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail2" class="label-inline1">Document Type</label>
+    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Document Type">
+  </div>
+  
+</div>
+
+       </div>
+
+     <div class="dekp-head">
+<div  class="mob-det-fxd">
+
+<ul>
+
+<li   class="col-md-1 sale-th nw-cl1 ">Week#</li>
+  <li class="col-md-2 sale-th">Week Start Date-End Date</li>
+
+      <li class="col-md-1 sale-th">Status</li>
+      <li class="col-md-2 sale-th">Action</li>
+      <li class="col-md-1 sale-th">Preview</li>
+      <li class="col-md-1 sale-th">Comment</li>
+      <li style="width:5%"></li>
+      <li style="width:5%"></li>
+<ul>
+
+</div>
+</div>
+         <!-- customer-details-record start -->
+          <table class="table " class="fixed_headers">
+          <!--  <thead>
+              <tr  style="position: fixed; background-color: grey;" >
+                <th></th>
+                <th>Customer ID</th>
+                <th>Customer Name</th>
+                <th>Billing Company</th>
+                <th>Warehouse</th>
+              </tr>
+            </thead>-->
+             
+            <tbody paginationclass>
+              
+              <tr ng-repeat="salesData in vm.salesData | filter:salesdatalistsM">
+               
+                <td style="width:4%;" class="col-md-1  " >{{salesData.WeekNo }}</td>
+                <td  class="col-md-2 sale-td" >({{salesData.StartDate | salesfilter:'StartDate'}})-({{salesData.EndDate | salesfilter:'EndDate'}})</td>
+               
+                <td class="col-md-1 sale-td">{{salesData.Active | salesfilter:'Status'}}</td>
+                  <td class="col-md-2 sale-prnt1">
+
+                  <div ><span class="col-xs-12 col-sm-12 col-md-12  " >
+                  <a class="action-a" href="mailto:?Subject=Marketing Catalogue&body=For Download Click this link {{salesData.fullFile}}">Email</a>
+                  <a class="action-a" ng-click="vm.preview(salesData.FilePath,$index)">Print</a> 
+                  <a class="action-a" 
+                  href="{{salesData.FilePath}}{{salesData.FileName}}" 
+                   target="_blank">Download</a></span>
+                  </div><img id="{{$index}}" src="{{salesData.FilePath}}{{salesData.FileName}}" style="display:none;"/></td>
+                  
+                <td  class="col-md-2 sale-td" > <!-- PDF File Path to Preview or Download-->
+                  
+                  
+                </td>
+                <td class="col-md-1 sale-td">{{salesData.Comments}}</td>
+                <td style="width:5%"><a class="action-a" ng-click="vm.setDataForEdit(salesData)">Edit</a></td>
+                <td style="width:5%"><a class="action-a" ng-click="vm.setDataForDelete(salesData.Srl)">Del</a></td>
+              </tr>
+             
+
+          
+
+          </tbody>
+          </table>
+          
+           
+        </div>
+        <!-- customer-details end -->
+      </div>
+      <!-- container end -->
+    </section>
+    <section>
+      <!-- mobile view start -->
+  <div class="col-md-12 details-bar clear-site-1 details-bar1 mob_detailbar">
+  
+  <span class="cust-span1" >Sales Communicator</span>
+
+
+     </div>
+
+   <style>
+   .cust-span1{
+   float:left;
+   }
+     .cust-span2{
+   float:right;
+   }
+   .select-btn1{
+    /* background-color: #003E89; */
+    width: 68px;
+    height: 25px;
+    padding-top: 0px;
+    font-size: 10px;
+    float: right;
+    margin-top: 0px;
+    margin-right: 24px;
+    padding-top: 5px;
+    /* border: 1px solid #FFFEFE; */
+    background-color: #f3bd24;
+    border-color: #f3bd24;
+      color: #003E89;
+   }
+     .select-btn1:hover{
+     color:#fff;
+      box-shadow: none;
+      -moz-box-shadow: none;
+      -webkit-box-shadow: none;
+}    
+
+.btn:hover, .btn:focus {
+  color: #FFF;
+  text-decoration: none;
+}
+   </style>
+   
+
+
+
+
+  <!--table-record-info end-->
+            <div class="row">
+                <!-- mobile view start -->
+                <div class="container container_nn">
+
+
+
+
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 slecDel lrn">
+                        
+
+                    </div>
+                    <div  class="nodata-info nodata-info1">
+                      <div class="main-search">
+        <input type="text" class="form-control search-cust" ng-model="salesdatalistsM" placeholder="Search">
+         <!-- <img src="images/search-cust-icon.png" class="search-cust-icon ">
+         <img src="images/cust-close-icon.png" class="close-cust-icon"> -->
+       </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12  mobile-order-entry-record"   ng-repeat="salesData in vm.salesData | filter:salesdatalistsM">
+              
+                    <!-- container -->
+                    <div class="col-xs-12 col-sm-12 col-md-12 right-dt timee">
+                         <b  style="float: left;padding-top: 10px;padding-left: 10px;">#Week{{salesData.WeekNo}} </b><p> ({{salesData.StartDate | salesfilter:'StartDate'}})-({{salesData.EndDate | salesfilter:'EndDate'}})</p>
+                    </div>
+                    
+                    <div class="col-xs-12 col-sm-12 col-md-12  mobile-order-entry-record" ng-class="{'overlayss':vm.cmd[$index] == true}" >
+                        <div ng-show="!viewData.checks" class="col-xs-12 col-sm-12 col-md-12 col-record clear-site-1">
+                            <div  class="col-xs-12 col-sm-12 col-md-12 mobile-table-left clear-site-1" >
+
+                                <div class="col-xs-3 col-sm-3 col-md-3 clear-site-1 items-num ffsize" ><!--  <iframe src="http://drive.google.com/viewerng/viewer?
+url=https://library.osu.edu/assets/Documents/SEL/QuickConvertWordPDF.pdf?
+pid=explorer&efh=false&a=v&chrome=false&embedded=true" width="50px" height="50px"  /> --></div>
+
+                                <!--items-num-->
+                                <div class="col-xs-7 col-sm-7 col-md-7 ">
+                            
+
+                                 <span class="item-desc">Comments:{{salesData.Comments}}</span>
+                                
+                                </div>
+                               
+                         <div ng-show="vm.cmd[$index]" ><span class="col-xs-12 col-sm-12 col-md-12  sale-prnt" ><a href="mailto:?Subject=Marketing Catalogue&to=&body=For Download Click this link {{salesData.fullFile}}">Email</a>
+                         <a>Print</a>
+                         <!-- <a href="http://166.62.119.178/omsdev{{salesData.FileName}}" target="_blank">Download</a> -->
+                         <a class="action-a" href="http://166.62.119.178/omsdev{{salesData.FilePath}}" 
+                   target="_blank">Download</a></span>
+                         </span></div>
+
+                            <!-- mobile-table-left -->
+                            <div class="col-xs-2 col-sm-2 col-md-2 mobile-table-right table-rtop clear-site-1">
+                                <input type="submit"  ng-if="salesData.Active == 'True'"  ng-click="vm.setEvent($index);vm.cmd[$index]=true;" class="submitted " value="A" />
+                                <input type="submit"  ng-if="salesData.Active != 'True'"  ng-click="vm.setEvent($index);vm.cmd[$index]=true;" class="submitted_2 " value="I" />
+                            </div>
+                            <!-- mobile-table-left -->
+                        </div>
+                       
+                        <!-- col-record -->
+                  
+                            <!-- mobile-table-left -->
+                        </div>
+                        <!-- col-record -->
+                         
+                    </div>
+                </div>
+                <!-- mobile view end -->
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+      
+      <!-- container -->
+    </section>
+   <div class="mob-fxclear4"></div>
+</div>
+
+ <ng-include src="headerUrl"></ng-include>

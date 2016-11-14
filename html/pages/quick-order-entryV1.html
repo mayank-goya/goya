@@ -1,0 +1,299 @@
+<div hide-toggle>
+    <section>
+    
+      <div class="col-md-12 breadcrumbs-links">
+        <!-- breadcrumbs-links start --> 
+        <div class="container">
+          <ol class="breadcrumb br-quk    bd-color">
+            <a ui-sref="home" class="color2">Home</a>>
+            <a ui-sref="orderentry" class="color2"> Quick-Order-Entry</a>
+          </ol>
+        </div>
+        <!-- container -->
+      </div>
+      <!-- breadcrumbs-links end -->
+    </section>
+    <div class="col-md-12 quck-details-bar clear-site-1 space-div" >
+      <!-- quck-details-bar end -->
+      <div id="pick_up_order"  class="container">
+        <div class="col-md-6 details-heading clear-site-1">
+          <p>Quick Order Entry</p>
+        </div>
+        <!-- details-heading end -->
+        <div class="col-md-6 details-submit clear-site-1" >
+          <div  class="btn btn-primary open-order">20 <a class="open">Open Orders</a></div>
+        </div>
+        <!-- details-heading end -->
+      </div>
+      <!-- container end --> 
+    </div>
+    <!-- quck-details-bar end --> 
+    <section>
+      <div class="container" id="quick-full-tab">
+        <div class="col-sm-12 col-md-12 main-div mob-view-hide clear-site-1" id="rem-scroll">
+          <div class="col-sm-12 col-md-12 quick-order-form clear-site-1" id="modHide">
+            <!-- quick-order-form desktop start--> 
+            <form>
+              <ul class="col-sm-6 col-md-6 inner-form-left">
+                <li>
+				
+                  <span class="e-first">EOR#</span>
+                  
+				  <p><input type="text" class="EOR-btn"  placeholder="1303000752">
+	<style type="text/css">
+	
+	.EOR-btn{
+	display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+	font-weight:bold;
+	}
+	
+ ::-webkit-input-placeholder {
+ font-size: 14px;
+ color: #003E89;
+ text-transform: uppercase;
+ text-transform: uppercase;
+ text-align: left;
+
+
+}
+:-moz-placeholder { /* older Firefox*/
+ font-size:14px;
+ color: #003E89;
+ text-transform: uppercase;
+  text-align: left;
+
+
+}
+::-moz-placeholder { /* Firefox 19+ */ 
+ font-size: 14px;
+ color: #003E89; 
+ text-transform: uppercase;
+ text-align: left;
+
+
+} 
+:-ms-input-placeholder { 
+ font-size: 14px; 
+ color: #003E89;
+ text-transform: uppercase;
+ text-align: left;
+
+ 
+}
+  </style>
+ 			  </p>
+                </li>
+                <li>
+                  <span>Pick Up</span>
+                  <p> <input type="checkbox">&nbsp;Yes</p>
+                </li>
+                <li id="tabDept_hide">
+                  <span>Dept </span>
+                  <p>
+                    <select class="form-control">
+                      <option>GR-Grocery</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </p>
+                </li>
+                <li class="col-xs-12 mob-full clear-site-1">
+                  <span>Item </span>
+                  <p><input type="text" class="form-control item-num"  placeholder="Item / UPC #">
+                    <button type="submit" class="btn btn-default add-item">+</button>
+                  </p>
+                </li>
+              </ul>
+              <ul class="col-sm-6 col-md-6 inner-form-right">
+                <li>
+                  <span>Select A/c</span>
+                  <p class="account">
+                    <select class="form-control account-field" placeholder="ALEX MOON">
+                      <option>ALEX MOON</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </p>
+                  <div class="account-icon"><img src="images/account-icon.png"></div>
+                </li>
+                <li id="desDept_hide">
+                  <span>Dept </span>
+                  <p>
+                    <select class="form-control">
+                      <option>GR-Grocery</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </p>
+                </li>
+                <li id="tabHide"></li>
+                <li>
+                  <span>Cases</span>
+                  <p>
+				  
+				  <input type="text" class="form-control item-num case-field"  placeholder="02">
+                    
+                  </p>
+                </li>
+              </ul>
+            </form>
+          </div>
+          <!-- quick-order-form desktop end--> 
+        </div>
+        <!-- container -->
+        <div class="container">
+          <div class="col-md-12 main-div btm-space mob-view-qk clear-site-1">
+            <!--mobile view quick-order-form start-->
+            <div class="col-md-12 quick-order-form  clear-site-1">
+              <form>
+                <ul class="col-md-6 inner-form-left">
+                  <li>
+                    <span class="e-first">EOR#</span>
+                    <p><input type="text" class="form-control" id="e-field" value="1303000752"></p>
+                  </li>
+                  <li>
+                    <span>Select A/c</span>
+                    <p class="account">
+                      <select class="form-control account-field" placeholder="ALEX MOON">
+                        <option>ALEX MOON</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                      </select>
+                    </p>
+                    <div class="account-icon"><img src="images/account-icon.png"></div>
+                  </li>
+                  <li>
+                    <span>Pick Up</span>
+                    <p> <input type="checkbox">&nbsp;Yes</p>
+                  </li>
+                  <li>
+                    <span>Dept </span>
+                    <p>
+                      <select class="form-control">
+                        <option>GR-Grocery</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                      </select>
+                    </p>
+                  </li>
+                  <li class="col-xs-6 mob-full clear-site-1">
+                    <span>Item </span>
+                    <p><input type="text" class="form-control item-num"  placeholder="Item / UPC #">
+                      <button type="submit" class="btn btn-default add-item">+</button>
+                    </p>
+                  </li>
+                  <li class="col-xs-6 mob-full clear-site-5">
+                    <span>Cases</span>
+                    <p>
+                      <select class="form-control case-field">
+                        <option>02</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                      </select>
+                    </p>
+                  </li>
+                </ul>
+              </form>
+            </div>
+          </div>
+          <!--mobile view quick-order-form end--> 
+        </div>
+        <!-- container -->
+        <div class="main-section right-space">
+          <div class="col-md-12 table-products-record  mobile-table-view clear-site-3">
+            <!-- table-products-record start -->
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Product</th>
+                  <th>Case</th>
+                  <th>Dept.</th>
+                  <th>Units</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>#111</td>
+                  <td>Lorem Ipsumh Lorem Ipsumh fLorem Ipsumh f..</td>
+                  <td>GR</td>
+                  <td><input type="email" class="form-control Dept-input" placeholder="15"></td>
+                  <td><input type="email" class="form-control Units-input" placeholder="12"></td>
+                  <td><img src="images/delete-icon.png"><span class="delete-field">Delete</span></td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>#111</td>
+                  <td>Lorem Ipsumh Lorem Ipsumh fLorem Ipsumh f..</td>
+                  <td>GR</td>
+                  <td><input type="email" class="form-control Dept-input"  placeholder="15"></td>
+                  <td><input type="email" class="form-control Units-input"  placeholder="12"></td>
+                  <td><img src="images/delete-icon.png"><span class="delete-field">Delete</span></td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>#111</td>
+                  <td>Lorem Ipsumh Lorem Ipsumh fLorem Ipsumh f..</td>
+                  <td>GR</td>
+                  <td><input type="email" class="form-control Dept-input" placeholder="15"></td>
+                  <td><input type="email" class="form-control Units-input"  placeholder="12"></td>
+                  <td><img src="images/delete-icon.png"><span class="delete-field">Delete</span></td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>#111</td>
+                  <td>Lorem Ipsumh Lorem Ipsumh fLorem Ipsumh f..</td>
+                  <td>GR</td>
+                  <td><input type="email" class="form-control Dept-input"  placeholder="15"></td>
+                  <td><input type="email" class="form-control Units-input"  placeholder="12"></td>
+                  <td><img src="images/delete-icon.png"><span class="delete-field">Delete</span></td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- table -->
+          </div>
+          <!-- table-products-record end -->
+          <div class="col-md-12 table-total-Q">
+            Total Quantity: 0
+          </div>
+          <!-- table-total-Q end -->
+          <div class="col-md-12 table-sub table-sub-mob">
+            <input type="submit" class="form-control qal-sub"  value="SUBMIT">
+            <input type="submit" class="form-control" value="RESET ALL">
+          </div>
+          <!-- table-products-record end -->
+          <div class="col-md-12 table-hide-info table-hide-mob">
+            <a ui-sref="orderentryaddinfo" class="add-info">Additional Info</a>
+          </div>
+          <!-- table-total-Q end -->
+        </div>
+      </div>
+      </div></div>
+    </section>
+    <!-- main-div -->
+    <!-- container -->
+</div>

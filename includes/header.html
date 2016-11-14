@@ -1,0 +1,484 @@
+
+<div class="mainHeader"  ng-controller="headerController as vm">
+<link href="https://fonts.googleapis.com/css?family=Lato|Oswald|Raleway|Roboto|Source+Sans+Pro" rel="stylesheet">
+<style type="text/css">
+  .new-ad-stp1{
+background-color:rgba(255, 0, 0, 0);
+height: auto;
+position: fixed;
+z-index: 99;
+width: 100% !important;
+padding-left: 10px;
+padding-right: 10px;
+color: #fff;
+margin-top: 0;
+font-size: 12px;
+padding: 4px 20px;
+left:318px;
+width: 11%;
+top: 12px;
+  }  
+  .new-ad-stp1 .left-cs{
+   width:65px;
+   float: left;
+  }
+    .new-ad-stp1 .left-eo{
+width:auto;
+   float: left;
+  }
+
+  @media only screen and (min-width:230px) and (max-width:768px){
+ .new-ad-stp1{
+    display: none;
+}
+  }
+
+
+  @media only screen and (min-width:230px) and (max-width:570px){
+      .form-neww1 {
+margin-top: 54px !important;
+}
+.hiditem{
+  display: none;
+}
+}
+  @media only screen and (min-width:540px) and (max-width:768px){
+      .form-neww1 {
+margin-top: 80px !important;
+}
+
+}
+</style>
+
+
+ <div  class="new-ad-stp1" ng-if="vm.setHeaderCol == false">
+   <span class="left-cs">Case: {{vm.case}}</span>
+   <span class="left-eo">#EOR: {{vm.EOR || '-'}}</span> 
+</div>  
+
+
+<div menu-toggle class="col-md-12 main-header-section"  ng-show="!login">
+        <!-- main-header-section start -->
+        
+        <div class="row">
+          <div class="container">
+            <div class="col-xs-6 col-sm-6 col-md-6 inner-logo"> 
+              <a ui-sref="login"><img src="images/logo.jpg" id="logo-hide-mob" ></a>
+              
+            </div>
+            <!-- inner-logo end -->
+            <div class="col-xs-6 col-sm-6 col-md-6 inner-profile login-hide space-top">
+              <!-- inner-profile start --> 
+              <nav class='navbar navbar-default' id="mobile-view-nav">
+                <div class='container'>
+                  <button type='button' class='navbar-toggle' ng-click="toggle()" id="menu-toggle">
+                  <span class='sr-only'>Toggle navigation</span>
+                  <span class='icon-bar'></span>
+                  <span class='icon-bar'></span>
+                  <span class='icon-bar'></span>
+                  </button>
+                  <div id="wrapper" class="wrapper">
+                    <div id="sidebar-wrapper">
+                      <div class="side_navbar">
+                        <a class='navbar-brand text-hide' href='/' onClick="handleClick()"></a>
+                      </div>
+                      <ul class='sidebar-nav'>
+                        <div class="col-xs-6 sidebar-nav-menu">
+                          <button type='button' class='navbar-toggle' ng-click="toggle()" id="menu-toggle">
+                          <span class='sr-only'>Toggle navigation</span>
+                          <span class='icon-bar'></span>
+                          <span class='icon-bar'></span>
+                          <span class='icon-bar'></span>
+                          </button>
+                        </div>
+                        <!--sidebar-nav-menu-->
+                        <div class="col-xs-6 sidebar-nav-logo">
+                          <a ui-sref="home"> <img src="images/logo.jpg" id="logo-hide-mob"></a>
+                        </div>
+                        <!--sidebar-nav-logo-->
+                        <li><a ui-sref="login">Home</a></li>
+                        <li><a ui-sref="#">About Us</a></li>
+                        <li><a ui-sref="#">Contact Us  </a></li>
+                        <li><a ui-sref="login">Login </a></li>
+                        <li ><a ui-sref="signup">Sign Up</a></li>
+                      </ul>
+                    </div>
+                    <div id="page-content-wrapper">
+                    </div>
+                  </div>
+                  <div class="orig_logo">
+                    <a class='navbar-brand text-hide' id="orig_logo"  href='/' onClick={Link.newhandleClick}>SmartMoney</a>
+                  </div>
+                </div>
+              </nav>
+             
+              <nav class="navbar navbar-default navbar-right desk-view-nav">
+                <div class="container-fluid">
+                  <!-- Collect the nav links, forms, and other content for toggling -->
+                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                       <li><a ui-sref="login">Home</a></li>
+                        <li><a ui-sref="#">About Us</a></li>
+                        <li><a ui-sref="#">Contact Us  </a></li>
+                        <li><a ui-sref="login">Login </a></li>
+                        <li ><a ui-sref="signup">Sign Up</a></li>
+                    </ul>
+                  </div>
+                  <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container-fluid -->
+              </nav>
+            </div>
+            <!-- inner-profile end -->
+          </div>
+          <!-- container -->
+        </div>
+        <!-- row -->
+</div>  
+      <!--home header close-->
+
+      <!--main header open-->
+
+
+
+<div menu-toggle class="col-md-12 main-header-section" ng-show="login">
+    <!-- main-header-section start -->
+    <div class="row">
+        <div id="top_header" class="container">
+            <div class="col-xs-6 col-md-6 inner-logo-box " id="logo-mob">
+
+
+
+                <div class="mob-toggle">
+                    <nav class='navbar navbar-default' id="mobile-view-nav">
+                        <div class='container'>
+                            <button type='button' class='navbar-toggle' ng-click="toggle()" id="menu-toggle">
+                            <span class='sr-only'>Toggle navigation</span>
+                            <span class='icon-bar'></span>
+                            <span class='icon-bar'></span>
+                            <span class='icon-bar'></span>
+                            </button>
+                            <div id="wrapper" class="wrapper" >
+                                <div id="sidebar-wrapper">
+                                    <div class="side_navbar">
+                                        <a class='navbar-brand text-hide' href='/' onClick="toggle()">SmartMoney</a>
+                                    </div>
+                                    <ul class='sidebar-nav'>
+                                        <div class="col-xs-6 sidebar-nav-menu">
+                                            <button type='button' class='navbar-toggle' ng-click="toggle()" id="menu-toggle">
+                            <span class='sr-only'>Toggle navigation</span>
+                            <span class='icon-bar'></span>
+                            <span class='icon-bar'></span>
+                            <span class='icon-bar'></span>
+                            </button>
+                                        </div>
+                                        <!--sidebar-nav-menu-->
+                                        <div class="col-xs-6 sidebar-nav-logo">
+                                            <a ui-sref="home"><img src="images/logo.jpg" id="logo-hide-mob"></a>
+                                        </div>
+                                        <!--sidebar-nav-logo-->
+                                        <li ng-class="{'border-right':vm.per.length-1!=$index}" ng-repeat="menu in vm.per" ><a ui-sref="{{menu.AccessName}}">{{menu.Description}}</a></li>
+                                        <!--  <li  ng-class="{'indexEvent':online==false}" style="border-right:none !important"><a ui-sref="cashmanagement">Cash Management</a></li> -->
+                                       <!--  ui-sref="salescommunicator" <li><a ui-sref="#">Promotion Details</a></li> -->
+                                        <li ng-repeat="otherMenu in vm.otherPer" ng-class="{'indexEvent':online==false}" class="border-left"  ><a href="{{otherMenu.PageURL}}" target="_blank">{{otherMenu.Description}}</a></li>
+                                       
+                                         
+                                    </ul>
+                                </div>
+                                <div id="page-content-wrapper">
+                                </div>
+                            </div>
+                            <div class="orig_logo">
+                                <a class='navbar-brand text-hide' id="orig_logo" href='/' onClick={Link.newhandleClick}>SmartMoney</a>
+                            </div>
+                        </div>
+                    </nav>
+                    
+                </div>
+                <!--mobile-menu-->
+                <a ui-sref="home"><img src="images/logo.jpg" class="mob-logo"></a>
+            
+
+           
+                <div   
+                ng-class="{'online-shw1':online == true,'online-shw3':online == false}"></div>
+
+               
+
+               
+
+                
+                 </div>
+                 
+
+            <!-- inner-logo -->
+            <div class="col-xs-6 col-xs-6 col-sm-6 col-md-6 inner-profile-box " id="profile-mob">
+
+                <ul>
+                    <li><img src="images/Avatar-blank.jpg" class="mobile-profile-viwe photopic"></li>
+                    <li>
+                        <div class="btn-group">
+                        
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{vm.username}} <span class="caret"></span>
+                    </button>
+                            <ul class="dropdown-menu newLi">
+                                <!-- <li><a href="#">Action</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Another action</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Separated link</a></li> -->
+                                <li ng-class="{'disCll':vm.per.logout=='False'}"><a href ="" ng-click="vm.logout()">Logout</a></li>
+                                <li><a  data-toggle="modal" data-target="#passwordChange">Change Password</a></li>
+                                <!-- <li ng-show="online == true"><a ng-click="vm.getOrderDataFromIndexDB()">Synchronize Order</a></li> -->
+
+                                <li><a  data-toggle="modal" data-target="#OMS">About OMS</a></li>
+ 
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+
+<style type="text/css">
+  .new-ad-stp{
+    background-color:#043672;height: auto;position: fixed;z-index: 99;
+width: 100%;left: 0;padding-left: 10px;padding-right: 10px;color: #fff;margin-top: 45px;font-size: 12px;padding: 4px 20px;
+  }  
+  .new-ad-stp .left-cs{
+    float: left;
+  }
+    .new-ad-stp .left-eo{
+    float: right;
+  }
+
+  @media only screen and (min-width:768px) and (max-width:2000px){
+ .new-ad-stp{
+    display: none;
+  }
+}
+
+  @media only screen and (min-width:230px) and (max-width:768px){
+      .form-neww1 {
+margin-top: 100px !important;
+}
+}
+
+
+
+  .new-ad-stp1{
+    background-color:white;
+    height: auto;
+    position: fixed;
+    z-index:60;
+    width: 100%;
+    left: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #fff;
+    font-size: 12px;
+    padding: 9px 20px;
+    top: 42px;
+  }  
+
+
+.new-ad-stp1 ul{
+  list-style: none;
+  float: left;
+}
+.new-ad-stp1 li{
+  list-style: none;
+  float: left;
+}
+.li-skk{
+  float: left;
+    width: 10%;
+}
+.li-mdd{
+  float: left;
+    width: 64%;
+}
+.add-btnn{
+  width: 24%;
+  float: left;
+}
+.field-hgtt{
+  height: 25px;
+}
+  @media only screen and (min-width:768px) and (max-width:2000px){
+ .new-ad-stp1{
+    display: none;
+  }
+}
+
+  @media only screen and (min-width:230px) and (max-width:600px){
+      .form-neww1 {
+margin-top: 119px !important;
+}
+ .new-ad-stp1{
+    display: block;
+  }
+}
+  @media only screen and (min-width:230px) and (max-width:440px){
+.li-mdd {
+    float: left;
+    width: 48%;
+}
+}
+  @media only screen and (min-width:440px) and (max-width:560px){
+.new-ad-stp1 li {
+    list-style: none;
+    float: left;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+}
+  @media only screen and (min-width:600px) and (max-width:2000px){
+    .new-ad-stp1{
+  display: none;
+}
+  }
+</style>
+
+       <div  class="new-ad-stp" ng-if="vm.setHeaderCol == false">
+   <span class="left-cs">Case: {{vm.case}}</span>
+
+   <span class="left-eo">#EOR: {{vm.EOR || '-'}}</span> 
+
+</div>  
+
+            </div>
+            <!-- inner-profile end -->
+        </div>
+        <!-- container -->
+    </div>
+    <!-- row -->
+
+    <div class="row">
+        <div class="col-md-12 nav-bar">
+            <!-- nav-bar start -->
+            <div class="container">
+                <div class="col-xs-12 col-sm-12 col-md-12 inner-profile">
+                    <!-- inner-profile start -->
+                    <nav class='navbar navbar-default navbar-default-quick quick-mobile-hd' id="mobile-view-nav">
+                        <div class='container'>
+                            <button type='button' class='navbar-toggle' ng-click="toggle()" id="menu-toggle">
+                            <span class='sr-only'>Toggle navigation</span>
+                            <span class='icon-bar'></span>
+                            <span class='icon-bar'></span>
+                            <span class='icon-bar'></span>
+                            </button>
+                            <div id="wrapper" class="wrapper">
+                                <div id="sidebar-wrapper">
+                                    <div class="side_navbar">
+                                        <a class='navbar-brand text-hide' href='/' onClick="toggle()">SmartMoney</a>
+                                    </div>
+                                    <ul class='sidebar-nav'>
+                                        <div class="col-xs-6 sidebar-nav-menu">
+                                            <button type='button' class='navbar-toggle' ng-click="handleClick()" id="menu-toggle">
+                                            <span class='sr-only'>Toggle navigation</span>
+                                            <span class='icon-bar'></span>
+                                            <span class='icon-bar'></span>
+                                            <span class='icon-bar'></span>
+                                            </button>
+                                        </div>
+                                        <!--sidebar-nav-menu-->
+                                        <div class="col-xs-6 sidebar-nav-logo ">
+                                            <a ui-sref="home"><img src="images/logo.jpg" class="mob-quick" id="logo-hide-mob"></a>
+                                        </div>
+                                        <!--sidebar-nav-logo-->
+                                       <li ng-class="{'border-right':vm.per.length-1!=$index}" ng-repeat="menu in vm.per" ><a  ui-sref="{{menu.AccessName}}">{{menu.Description}}</a></li>
+                                       <li ng-repeat="otherMenu in vm.otherPer" ng-class="{'indexEvent':online==false}" class="border-left"  ><a href="{{otherMenu.PageURL}}" target="_blank">{{otherMenu.Description}}</a></li>
+                                    </ul>
+                                </div>
+                                <div id="page-content-wrapper">
+                                </div>
+                            </div>
+                            <div class="orig_logo">
+                                <a class='navbar-brand text-hide' id="orig_logo" href='/' onClick={Link.newhandleClick}>SmartMoney</a>
+                            </div>
+                        </div>
+                    </nav>
+                    
+                    <nav class="navbar navbar-default navbar-default-quick desk-view-nav">
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                               <li ng-class="{'border-right':vm.per.length-1!=$index}" ng-repeat="menu in vm.per" ><a ui-sref="{{menu.AccessName}}">{{menu.Description}}</a></li>
+                               <li ng-repeat="otherMenu in vm.otherPer" ng-class="{'indexEvent':online==false}" class="border-left"  ><a href="{{otherMenu.PageURL}}" target="_blank">{{otherMenu.Description}}</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                    </nav>
+                </div>
+                <!-- inner-profile end -->
+            </div>
+            <!-- container -->
+        </div>
+        <!-- nav-bar end -->
+    </div>
+    <div class="modal fade" id="passwordChange" role="dialog"  data-backdrop="static">
+  <div class="modal-dialog modal-dialog1" style="z-index:9999999">
+      <div class="modal-content" >
+
+          <div class="modal-header">  
+              <h2  class="changehdg"><b>Change Password</b></h1>
+          </div>
+
+          <div  style="padding-top: 0;" class="modal-body  ftr-align chanPwd table-responsive">
+          <form ng-submit="vm.passwordConfirm(vm.reqChangePass)">
+          <table class="table">
+
+            <tr><td><b>Username</b></td><td><input type="text" class="form-control" name="userId" ng-model="vm.reqChangePass.userId" readonly/></td></tr>
+
+            <tr><td><b>Old Password</b></td><td><input type="password" class="form-control" name="password" ng-model="vm.reqChangePass.oldPassword" required /></td></tr>
+
+            <tr><td><b>New Password</b></td><td><input type="password" class="form-control" name="password" ng-model="vm.reqChangePass.newPassword" required/></td></tr>
+
+          </table>
+               <div class="modal-footer ftr-align">
+              
+             <input type="submit" name="submit" value="Submit" class="passSubmit changebtn" />
+              <button class="orangeBtn add-crt-btn1 changebtn1" ng-click="vm.close()" data-dismiss="modal" >Close</button>
+          </div>
+              
+          </form>
+          </div>
+
+          
+          
+      </div>
+  </div>
+</div>
+
+    <!-- row -->
+</div>
+
+
+
+</div> <!--  close main div  header   -->
+<div class="modal fade" id="OMS" role="dialog"  data-backdrop="static">
+  <div class="modal-dialog" style="z-index:9999999">
+      <div class="modal-content" >
+
+          <div class="modal-header">  
+              <h2 style="text-align:center"><img src="images/logo.jpg" id="logo-hide-mob" ></h1>
+          </div>
+
+          <div  style="padding-top: 0;" class="modal-body  ftr-align">
+               <h4 >Order Management System</h4>
+               <h4 >Version 2.0.0</h4>
+          </div>
+
+          <div class="modal-footer ftr-align">
+              
+            
+              <button class="orangeBtn add-crt-btn1" data-dismiss="modal" >Close</button>
+          </div>
+          
+      </div>
+  </div>
+</div>
+
