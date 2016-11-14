@@ -10,10 +10,21 @@ define([], function(app){
             //after login set login variable in root scope
              vm.showList = [];
              vm.showList1 = [];
+             vm.isShowEmail = true;
+             vm.isShowPhone = true;
+             vm.isShowPassword = true;
              vm.reqChangePass = {
-              userId:localStorage['user_id'],
+              confPassword:'',
               oldPassword:'',
               newPassword:''
+             }
+             vm.UserProfile = {
+              userName: localStorage['user_id'],
+              fullName: localStorage['userName'],
+              company: '',
+              role: '',
+              email: '',
+              phone: ''
              }
              vm.notShowableList = [];
             if(!localStorage['access_token']){
@@ -118,7 +129,7 @@ define([], function(app){
 
    getPermisssionList();  
    vm.userClickDetails = [];
-   
+   vm.confPass = true;
         $scope.$on('usersend',function  (event,res) {
            initRootScope();
         })
@@ -127,14 +138,43 @@ define([], function(app){
         })
         vm.passwordConfirm = function (req) {
          console.log(req);
+         var reqObject = {
+          "OldPassword":req.oldPassword,
+          "NewPassword":req.newPassword,
+          "ConfirmPassword":req.confPassword
+         }
+         vm.confPass = checkAuthorization.confirmPassword(reqObject);
+         if(vm.confPass == true){
+            requestManager.changePassword(reqObject).then(function (response) {
+            console.log(JSON.stringify(response));
+            $('#passwordChange').modal('hide');
+             // body...
+           })
+         }
+         
         }
         vm.close = function () {
           vm.reqChangePass = {
-              userId:localStorage['user_id'],
+              confPassword:'',
               oldPassword:'',
-              newPassword:''
+              newPassword:'',
+              password:''
              }
+             vm.confPass = true;
              $('#passwordChange').modal('hide');
+        }
+        vm.closeProfile = function () {
+          vm.UserProfile = {
+              userName: localStorage['user_id'],
+              fullName: localStorage['userName'],
+              company: '',
+              role: '',
+              email: '',
+              phone: ''
+             }
+             vm.isShowEmail = true;
+             vm.isShowPhone = true;
+             vm.isShowPassword = true;
         }
         vm.logout = function () {
              $rootScope.isLoading=false;

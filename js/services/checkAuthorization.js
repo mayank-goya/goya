@@ -23,6 +23,13 @@ define([], function(app) {
                 
                /* var SortList = _.sortBy(list,'AccessId');*/
                 return list;   
+            },
+            confirmPassword: function(req){
+                if(req.NewPassword == req.ConfirmPassword){
+                    return true;
+                }else{
+                    return false;
+                }
             }
             
     	  }

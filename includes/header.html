@@ -231,6 +231,7 @@ margin-top: 80px !important;
                                 <li role="separator" class="divider"></li>
                                 <li><a href="#">Separated link</a></li> -->
                                 <li ng-class="{'disCll':vm.per.logout=='False'}"><a href ="" ng-click="vm.logout()">Logout</a></li>
+                                <li><a  data-toggle="modal" data-target="#myProfile">My Profile</a></li>
                                 <li><a  data-toggle="modal" data-target="#passwordChange">Change Password</a></li>
                                 <!-- <li ng-show="online == true"><a ng-click="vm.getOrderDataFromIndexDB()">Synchronize Order</a></li> -->
 
@@ -426,17 +427,17 @@ margin-top: 119px !important;
           <div class="modal-header">  
               <h2  class="changehdg"><b>Change Password</b></h1>
           </div>
-
+          <span style="color:red;margin-left: 104px;" ng-if="!vm.confPass">Password does not matched</span>
           <div  style="padding-top: 0;" class="modal-body  ftr-align chanPwd table-responsive">
           <form ng-submit="vm.passwordConfirm(vm.reqChangePass)">
           <table class="table">
 
-            <tr><td><b>Username</b></td><td><input type="text" class="form-control" name="userId" ng-model="vm.reqChangePass.userId" readonly/></td></tr>
+           
 
             <tr><td><b>Old Password</b></td><td><input type="password" class="form-control" name="password" ng-model="vm.reqChangePass.oldPassword" required /></td></tr>
 
             <tr><td><b>New Password</b></td><td><input type="password" class="form-control" name="password" ng-model="vm.reqChangePass.newPassword" required/></td></tr>
-
+             <tr><td><b>Confirm Password</b></td><td><input type="password" class="form-control" name="confPass" ng-model="vm.reqChangePass.confPassword" /></td></tr>
           </table>
                <div class="modal-footer ftr-align">
               
@@ -452,7 +453,50 @@ margin-top: 119px !important;
       </div>
   </div>
 </div>
+<div class="modal fade" id="myProfile" role="dialog"  data-backdrop="static">
+  <div class="modal-dialog modal-dialog1" style="z-index:9999999">
+      <div class="modal-content" >
 
+          <div class="modal-header">  
+              <h2  class="changehdg"><b>My Profile</b></h1>
+          </div>
+          <span style="color:red;margin-left: 104px;" ng-if="!vm.confPass">Password does not matched</span>
+          <div  style="padding-top: 0;" class="modal-body  ftr-align chanPwd table-responsive">
+          <form ng-submit="vm.Profile(vm.UserProfile)">
+          <table class="table">         
+            <tr><td><b>Username</b></td><td><input type="text" class="form-control" name="username" ng-model="vm.UserProfile.userName" readonly /></td></tr>
+
+            <tr><td><b>Full Name</b></td><td><input type="text" class="form-control" name="fullname" ng-model="vm.UserProfile.fullName" readonly/></td></tr>
+             <tr><td><b>Company</b></td><td><input type="text" class="form-control" name="company" ng-model="vm.UserProfile.company" required/></td></tr>
+             <tr><td><b>Role</b></td><td><input type="text" class="form-control" name="role" ng-model="vm.UserProfile.role" /></td></tr>
+             <tr><td><b>Email</b></td><td ng-if="!vm.isShowEmail"><input type="email" class="form-control" name="email" ng-model="vm.UserProfile.email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required/></br> <input type="button" name="update" value="Update" class="passSubmit changebtn" ng-click="vm.isShowEmail=true;" /></td><td ng-click="vm.isShowEmail=false" ng-if="vm.isShowEmail">mayank@gmail.com&nbsp; <a class="textProf" ng-click="vm.isShowEmail=true;">Edit</a></td></tr>
+              <tr>
+              <td><b>Phone</b></td>
+              <td  ng-if="vm.isShowPhone">9839391216 <a ng-click="vm.isShowPhone=false" class="textProf">Edit&nbsp;</a></td><td ng-if="!vm.isShowPhone"><input type="tel" class="form-control" name="number" ng-model="vm.UserProfile.phone" required/>
+              </br> <input type="button" name="update" value="Update" class="passSubmit changebtn" ng-click="vm.isShowPhone=true;" />
+              </td>
+              </tr>
+              <tr ng-if="vm.isShowPassword"><td><b>Password</b></td><td><input type="password" class="form-control" name="password" ng-model="vm.UserProfile.password" readonly />&nbsp; <a class="textProf" ng-click="vm.isShowPassword=false;">Edit</a></td></tr>
+              <tr ng-if="!vm.isShowPassword"><td><b>Old Password</b></td><td><input type="password" class="form-control" name="password" ng-model="vm.UserProfile.oldPassword" required /></td></tr>
+
+            <tr ng-if="!vm.isShowPassword"><td><b>New Password</b></td><td><input type="password" class="form-control" name="password" ng-model="vm.UserProfile.newPassword" required/></td></tr>
+             <tr ng-if="!vm.isShowPassword"><td><b>Confirm Password</b></td><td><input type="password" class="form-control" name="confPass" ng-model="vm.UserProfile.confPassword" />
+             </br> <input type="button" name="update" value="Save" class="passSubmit changebtn" ng-click="vm.isShowPassword=true;" /></td></tr>
+          </table>
+               <div class="modal-footer ftr-align">
+              
+             <input type="submit" name="submit" value="Submit" class="passSubmit changebtn" />
+              <button class="orangeBtn add-crt-btn1 changebtn1" ng-click="vm.closeProfile()" data-dismiss="modal" >Close</button>
+          </div>
+              
+          </form>
+          </div>
+
+          
+          
+      </div>
+  </div>
+</div>
     <!-- row -->
 </div>
 

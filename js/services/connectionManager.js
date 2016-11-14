@@ -42,14 +42,14 @@ define([], function(app) {
                     }
                 }
                // console.log('header: ' + JSON.stringify(header));
-                if(request.requestApi == 'OMSWebApiUAT/api/user'){
+                if(request.requestApi == 'OMSWebApiUAT/api/user' || request.requestApi == "OMSWebApiUAT/api/Account/ChangePassword"){
                     var reqObj = {
                         url: API,
                         method: requestMethod,
                         data: data,
                         header : header,
                     }
-                    //console.log('show req'+JSON.stringify(reqObj));
+                    console.log('show req'+JSON.stringify(reqObj));
                 }
                 else if(request.domain=='GoyaAPI') // Check for APIs from GOYA
                 {

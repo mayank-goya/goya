@@ -12,6 +12,7 @@ define([], function(app){
             
             //checkAuthorization.Authentication();
             //goForgetPassword(); 
+            localStorage['path'] = 'forget-password';
             vm.submitReqUser = {
                 "userId": "",
                 "emailId": ""
@@ -19,15 +20,17 @@ define([], function(app){
         }
 
         function goForgetPassword(){
-        	var req = {
-	        		
-	        }
-        	requestManager.forgetPassword(req).then(function(result) {
-                        console.log('forgetPassword response: ' + JSON.stringify(result));
-            });
+        	
         }
         vm.forgotPassword = function (req) {
               console.log(req);
+              var req = {
+                  "UserName": req.userId,
+                  "Email": req.emailId   
+             }
+            requestManager.forgetPassword(req).then(function(result) {
+                        console.log('forgetPassword response: ' + JSON.stringify(result));
+            });
               
             }
     }

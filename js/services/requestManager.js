@@ -179,7 +179,7 @@ define([], function(app) {
             },
             changePassword: function(data) {
                 
-                apiKey = "api/ChangePassword";
+                apiKey = "OMSWebApiUAT/api/Account/ChangePassword";
                 method = "POST";
                 var request = {
                     domain: "changePassword",
@@ -203,7 +203,7 @@ define([], function(app) {
             },
             forgetPassword: function(data) {
                 
-                apiKey = "api/ForgetPassword";
+                apiKey = "OMSWebApiUAT/api/Account/ForgetPasswordEmail";
                 method = "POST";
                 var request = {
                     domain: "forgetPassword",
@@ -953,20 +953,6 @@ define([], function(app) {
                     payload: data
                 };
                 return conn.sendRequest(request, method);   
-            },
-
-            GetOrderPreviewDB2: function(data) 
-             {
-               
-                apiKey = "OMSWebApiUAT/api/OrderHistory/GetOrderPreviewDB2/";
-                method = "POST";
-                var request = {
-                    domain: "GetOrderPreview",
-                    event: "GetOrderPreview",
-                    requestApi: apiKey,
-                    payload: data
-                };
-                return conn.sendRequest(request, method);
             },
 
            

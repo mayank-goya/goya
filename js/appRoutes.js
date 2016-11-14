@@ -27,6 +27,11 @@ define([],function(){
                 templateUrl: "html/pages/forget-password.html",
                 controller: "ForgetPasswordController as vm"
             })
+            .state('forgetpasswordchange', {
+                url: "/forget-password-change",
+                templateUrl: "html/pages/forget-password-change.html",
+                controller: "ForgetPasswordChangeController as vm"
+            })
             .state('orderentry', {
                 url: "/order-entry",
                 templateUrl: "html/pages/quick-order-entryaddinfo.html",

@@ -4,6 +4,7 @@ define(['js/appRoutes',
         'js/controllers/loginController',
         'js/controllers/signupController',
         'js/controllers/ForgetPasswordController',
+        'js/controllers/ForgetPasswordChangeController',
         'js/controllers/OrderController',
         'js/controllers/OrderAddController',
         'js/controllers/SearchOrderController',
@@ -42,7 +43,7 @@ define(['js/appRoutes',
         'js/directive/userClickingDirective',
         'js/directive/dateStockPicker'
         ],
-    function(config,homeController,headerController, loginController, signupController,ForgetPasswordController,OrderController,OrderAddController,SearchOrderController,SearchItemController,customerDetailsController,customercInfo,salesCommunicatorController,cashManagementController,outOfStockController,requestManager,connectionManager,checkAuthorization,errorService,errorModalService,FactoryIndexedDBLoad,pagination,salesfilter,setUser,setHeaderItem,checkBrowserDetails,menuToggle,hideToggle,errorModal,datetopicker,datefrompicker,datetomobmpicker,datefrommobpicker,bulkModal,cartModal,iosDblclick,homescreen,cartClick,swipeTouch,customerInfo,positionClick,userclick,datestockpicker){
+    function(config,homeController,headerController, loginController, signupController,ForgetPasswordController,ForgetPasswordChangeController,OrderController,OrderAddController,SearchOrderController,SearchItemController,customerDetailsController,customercInfo,salesCommunicatorController,cashManagementController,outOfStockController,requestManager,connectionManager,checkAuthorization,errorService,errorModalService,FactoryIndexedDBLoad,pagination,salesfilter,setUser,setHeaderItem,checkBrowserDetails,menuToggle,hideToggle,errorModal,datetopicker,datefrompicker,datetomobmpicker,datefrommobpicker,bulkModal,cartModal,iosDblclick,homescreen,cartClick,swipeTouch,customerInfo,positionClick,userclick,datestockpicker){
     'use strict';
 
     var app = angular.module('app', ['ui.router','acute.select']);
@@ -97,9 +98,10 @@ define(['js/appRoutes',
 
             if(!localStorage['access_token']){
                 path = localStorage.getItem('path');
+                alert(path)
                 $rootScope.login = false;
 
-                $location.path('/login');
+                $location.path(path);
             }else{ 
                 $rootScope.login = true;  
                  console.log('hiiidaaaaaaaaaaaaaa');
@@ -118,6 +120,7 @@ define(['js/appRoutes',
     app.controller('loginController', loginController);
     app.controller('signupController',signupController);
     app.controller('ForgetPasswordController',ForgetPasswordController);
+    app.controller('ForgetPasswordChangeController',ForgetPasswordChangeController);
     app.controller('OrderController',OrderController);
     app.controller('OrderAddController',OrderAddController);
     app.controller('SearchOrderController',SearchOrderController);

@@ -3,6 +3,10 @@ background-color:#efefef;
 font-size:14px;
 font-family: 'Lato', sans-serif;
 }
+.textProf{
+  text-decoration: none !important;
+  cursor: pointer;
+}
 .outStock{
   background:#003e89;
   height: 42px;

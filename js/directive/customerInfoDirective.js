@@ -20,7 +20,6 @@ define([], function(app){
             $scope.isPickUp = false;
             $scope.DeliveryDate='';
             $scope.totalCasePrice = 0;
-            $scope.OrderPreview='';
             
              $scope.setPreview = function () {              
                var modal_height = $('.item-dtlnew').height()*$scope.tot*3+500;
@@ -79,7 +78,7 @@ define([], function(app){
 
            $scope.$watch('mobDetails',function () 
            {
-               $scope.OrderPreview='';
+            //debugger;
             if($scope.mobDetails){
               console.log('show mob details'+JSON.stringify($scope.mobDetails));
               if($scope.mobDetails.Pickup == "true")
@@ -106,36 +105,17 @@ define([], function(app){
                  $scope.PONumber = $scope.mobDet.PONumber;
                  $scope.Action='P';
               }
-              var req='';
- 
-              if($scope.mobDetails.PONumber.length>4)
-              {
-               req = 
+   
+               var req = 
                {
                     BasketId:$scope.PONumber,
                     CompanyId:'2',                                     
                     Action:$scope.Action
                 } 
-              }
-              else  // Order Preview from AS400 DB
-              {
-                req = 
-               {
-                    BasketId:$scope.mobDetails.OrderNo,
-                    GoyaCompanyId:'01',                                     
-                    Action:$scope.Action
-                } 
-              }
-
            $rootScope.isLoading = true;
            $scope.totalCasePrice = 0;
-        
-         //  if($scope.mobDetails.PONumber.length>4)
-         //           requestManager.GetOrderPreview(req).then(function(result) 
-         //  else 
-               requestManager.GetOrderPreviewDB2(req).then(function(result)   // Order Preview from AS400 DB
-            {    
-                                
+            requestManager.GetOrderPreview(req).then(function(result) 
+            {                         
                 $rootScope.isLoading = false;  
                 if (result.Payload) 
                 {     
